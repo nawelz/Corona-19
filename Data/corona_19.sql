@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 04 avr. 2020 à 01:12
+-- Généré le : sam. 04 avr. 2020 à 01:36
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.4
 
@@ -20,6 +20,78 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `corona_19`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `config`
+--
+
+CREATE TABLE `config` (
+  `id` int(11) NOT NULL,
+  `cat` varchar(256) NOT NULL,
+  `prod` varchar(256) NOT NULL,
+  `debpd` varchar(256) NOT NULL,
+  `s_mail` varchar(256) NOT NULL,
+  `mail` varchar(256) NOT NULL,
+  `nom_site` varchar(256) NOT NULL,
+  `nom_mail` varchar(256) NOT NULL,
+  `newp` varchar(256) NOT NULL,
+  `url` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `config`
+--
+
+INSERT INTO `config` (`id`, `cat`, `prod`, `debpd`, `s_mail`, `mail`, `nom_site`, `nom_mail`, `newp`, `url`) VALUES
+(1, '9', '10', '1000', 'me@ziedmaaloul.site', 'me@ziedmaaloul.site', 'Covid', 'Covid', '10', 'http://localhost/Corona-19');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `espace`
+--
+
+CREATE TABLE `espace` (
+  `ID` int(11) NOT NULL,
+  `pseudo` varchar(100) NOT NULL,
+  `pass` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `date_enregistrement` varchar(256) NOT NULL,
+  `nom` varchar(256) NOT NULL,
+  `pays` varchar(256) NOT NULL,
+  `mail` varchar(256) NOT NULL,
+  `tel` varchar(256) NOT NULL,
+  `OPR` longtext NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `espace`
+--
+
+INSERT INTO `espace` (`ID`, `pseudo`, `pass`, `date_enregistrement`, `nom`, `pays`, `mail`, `tel`, `OPR`) VALUES
+(10, 'ziedev', '99030810', '', 'Zied Maaloul', '', 'me@ziedmaaloul.site', '', 'intext:\"commentaire\"'),
+(11, 'heni', '99030810', '29-08-2019 12:41:20', 'heni@gmail.com', '', 'heni@gmail.com', '99030810', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `membres`
+--
+
+CREATE TABLE `membres` (
+  `ID` int(11) NOT NULL,
+  `pseudo` varchar(100) NOT NULL,
+  `pass` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `date_enregistrement` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `membres`
+--
+
+INSERT INTO `membres` (`ID`, `pseudo`, `pass`, `date_enregistrement`) VALUES
+(1, 'ziedev', '99030810', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -216,7 +288,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (109, 'widget_tag_cloud', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (110, 'widget_nav_menu', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (111, 'widget_custom_html', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
-(112, 'cron', 'a:5:{i:1585956696;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1585957778;a:1:{s:26:\"upgrader_scheduled_cleanup\";a:1:{s:32:\"c9059feef497c200e69cb9956a81f005\";a:2:{s:8:\"schedule\";b:0;s:4:\"args\";a:1:{i:0;i:5;}}}}i:1585992696;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1586036033;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
+(112, 'cron', 'a:5:{i:1585957778;a:1:{s:26:\"upgrader_scheduled_cleanup\";a:1:{s:32:\"c9059feef497c200e69cb9956a81f005\";a:2:{s:8:\"schedule\";b:0;s:4:\"args\";a:1:{i:0;i:5;}}}}i:1585960296;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1585992696;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1586036033;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
 (113, 'theme_mods_twentyseventeen', 'a:1:{s:18:\"custom_css_post_id\";i:-1;}', 'yes'),
 (125, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:7:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:7:\"upgrade\";s:8:\"download\";s:63:\"https://downloads.wordpress.org/release/fr_FR/wordpress-5.4.zip\";s:6:\"locale\";s:5:\"fr_FR\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:63:\"https://downloads.wordpress.org/release/fr_FR/wordpress-5.4.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:3:\"5.4\";s:7:\"version\";s:3:\"5.4\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";}i:1;O:8:\"stdClass\":10:{s:8:\"response\";s:7:\"upgrade\";s:8:\"download\";s:57:\"https://downloads.wordpress.org/release/wordpress-5.4.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:57:\"https://downloads.wordpress.org/release/wordpress-5.4.zip\";s:10:\"no_content\";s:68:\"https://downloads.wordpress.org/release/wordpress-5.4-no-content.zip\";s:11:\"new_bundled\";s:69:\"https://downloads.wordpress.org/release/wordpress-5.4-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:3:\"5.4\";s:7:\"version\";s:3:\"5.4\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";}i:2;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:57:\"https://downloads.wordpress.org/release/wordpress-5.4.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:57:\"https://downloads.wordpress.org/release/wordpress-5.4.zip\";s:10:\"no_content\";s:68:\"https://downloads.wordpress.org/release/wordpress-5.4-no-content.zip\";s:11:\"new_bundled\";s:69:\"https://downloads.wordpress.org/release/wordpress-5.4-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:3:\"5.4\";s:7:\"version\";s:3:\"5.4\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}i:3;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.3.2.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.3.2.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.3.2-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.3.2-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.3.2\";s:7:\"version\";s:5:\"5.3.2\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}i:4;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.2.5.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.2.5.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.2.5-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.2.5-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.2.5\";s:7:\"version\";s:5:\"5.2.5\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}i:5;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.1.4.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.1.4.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.1.4-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.1.4-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.1.4\";s:7:\"version\";s:5:\"5.1.4\";s:11:\"php_version\";s:5:\"5.2.4\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}i:6;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.0.8.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.0.8.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.0.8-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.0.8-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.0.8\";s:7:\"version\";s:5:\"5.0.8\";s:11:\"php_version\";s:5:\"5.2.4\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}}s:12:\"last_checked\";i:1585954796;s:15:\"version_checked\";s:6:\"4.9.13\";s:12:\"translations\";a:0:{}}', 'no'),
 (126, '_site_transient_timeout_browser_83af38e386442d21dd5e75b2ef3a34c3', '1586554428', 'no'),
@@ -269,7 +341,7 @@ CREATE TABLE `wp_postmeta` (
 INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
 (1, 2, '_wp_page_template', 'default'),
 (2, 3, '_wp_page_template', 'default'),
-(5, 6, '_form', '<label> Covid-19 Questionnaire\n    [text your-subject] </label>\n\n<label> Votre Nom et Prénom (required)\n    [text* your-name] </label>\n\n<label> Email (required)\n    [email* your-email] </label>\n\n[textarea textarea-282 \"Question 1 sur 12\"]\n[textarea textarea-282 \"Ces derniers jours, avez-vous eu ou ressenti un de ces symptômes ?\"]\n[checkbox checkbox-424 label_first \"Vous avez de la fièvre (Température>37°8)\" \"Vous avez une toux et une difficulté respiratoire\" \"Vous avez une diarrhée (au moins 3 selles molles/j)\" \"Vous avez des céphalées (maux de tête)\"]\n\n\n\n<label> Suggestion\n    [textarea your-message] </label>\n\n[submit \"Send\"]'),
+(5, 6, '_form', '<label> Covid-19 Questionnaire\n    [text your-subject] </label>\n\n<label> Votre Nom et Prénom (required)\n    [text* your-name] </label>\n\n<label> Email (required)\n    [email* your-email] </label>\n\n[text text-936 \"Question 1 sur 12\"]\n[text text-936 \"Ces derniers jours, avez-vous eu ou ressenti un de ces symptômes ?\"]\n[checkbox checkbox-424 label_first \"Vous avez de la fièvre (Température>37°8)\" \"Vous avez une toux et une difficulté respiratoire\" \"Vous avez une diarrhée (au moins 3 selles molles/j)\" \"Vous avez des céphalées (maux de tête)\"]\n\n[text text-937 \"Question 2 sur 12\"]\n[text text-937 \"Est-ce que vous avez été en voyage à l\'étranger ces deux dernières semaines ?\"]\n[checkbox checkbox-765  label_first \"Oui\" \"Non\"]\n\n[text text-938 \"Question 3 sur 12\"]\n[text text-938 \"Est-ce que vous avez été en contact, pendant les deux dernières semaines, avec une personne revenant d’un voyage à l\'étranger?\"]\n[checkbox checkbox-766 label_first \"Oui\" \"Non\"]\n\n[text text-939 \"Question 4 sur 12\"]\n[text text-939 \"Est-ce que vous avez été en contact, pendant les deux dernières semaines, avec une personne atteinte du Coronavirus ?\"]\n[checkbox checkbox-767 label_first \"Oui\" \"Non\"]\n\n[text text-940 \"Question 5 sur 12\"]\n[text text-940 \"Quelle est votre année de naissance ?\"]\n[date date-793 placeholder]\n\n[text text-941 \"Question 6 sur 12\"]\n[text text-941 \"Quel est votre genre ?\"]\n[checkbox checkbox-768 label_first \"Masculin\" \"Féminin\"]\n\n[text text-942 \"Question 7 sur 12\"]\n[text text-942 \"Quel est votre poids (en kg)?\"]\n[textarea textarea-468]\n\n\n<label> Suggestion\n    [textarea your-message] </label>\n\n[submit \"Send\"]'),
 (6, 6, '_mail', 'a:9:{s:6:\"active\";b:1;s:7:\"subject\";s:29:\"Corona Virus \"[your-subject]\"\";s:6:\"sender\";s:37:\"Corona Virus <heni.zribi92@gmail.com>\";s:9:\"recipient\";s:22:\"heni.zribi92@gmail.com\";s:4:\"body\";s:177:\"From: [your-name] <[your-email]>\nSubject: [your-subject]\n\nMessage Body:\n[your-message]\n\n-- \nThis e-mail was sent from a contact form on Corona Virus (http://localhost/Corona-19)\";s:18:\"additional_headers\";s:22:\"Reply-To: [your-email]\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (7, 6, '_mail_2', 'a:9:{s:6:\"active\";b:0;s:7:\"subject\";s:29:\"Corona Virus \"[your-subject]\"\";s:6:\"sender\";s:37:\"Corona Virus <heni.zribi92@gmail.com>\";s:9:\"recipient\";s:12:\"[your-email]\";s:4:\"body\";s:119:\"Message Body:\n[your-message]\n\n-- \nThis e-mail was sent from a contact form on Corona Virus (http://localhost/Corona-19)\";s:18:\"additional_headers\";s:32:\"Reply-To: heni.zribi92@gmail.com\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (8, 6, '_messages', 'a:22:{s:12:\"mail_sent_ok\";s:45:\"Thank you for your message. It has been sent.\";s:12:\"mail_sent_ng\";s:71:\"There was an error trying to send your message. Please try again later.\";s:16:\"validation_error\";s:61:\"One or more fields have an error. Please check and try again.\";s:4:\"spam\";s:71:\"There was an error trying to send your message. Please try again later.\";s:12:\"accept_terms\";s:69:\"You must accept the terms and conditions before sending your message.\";s:16:\"invalid_required\";s:22:\"The field is required.\";s:16:\"invalid_too_long\";s:22:\"The field is too long.\";s:17:\"invalid_too_short\";s:23:\"The field is too short.\";s:12:\"invalid_date\";s:29:\"The date format is incorrect.\";s:14:\"date_too_early\";s:44:\"The date is before the earliest one allowed.\";s:13:\"date_too_late\";s:41:\"The date is after the latest one allowed.\";s:13:\"upload_failed\";s:46:\"There was an unknown error uploading the file.\";s:24:\"upload_file_type_invalid\";s:49:\"You are not allowed to upload files of this type.\";s:21:\"upload_file_too_large\";s:20:\"The file is too big.\";s:23:\"upload_failed_php_error\";s:38:\"There was an error uploading the file.\";s:14:\"invalid_number\";s:29:\"The number format is invalid.\";s:16:\"number_too_small\";s:47:\"The number is smaller than the minimum allowed.\";s:16:\"number_too_large\";s:46:\"The number is larger than the maximum allowed.\";s:23:\"quiz_answer_not_correct\";s:36:\"The answer to the quiz is incorrect.\";s:13:\"invalid_email\";s:38:\"The e-mail address entered is invalid.\";s:11:\"invalid_url\";s:19:\"The URL is invalid.\";s:11:\"invalid_tel\";s:32:\"The telephone number is invalid.\";}'),
@@ -317,7 +389,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (2, 1, '2020-04-03 23:31:35', '2020-04-03 21:31:35', 'Voici un exemple de page. Elle est différente d’un article de blog, en cela qu’elle restera à la même place, et s’affichera dans le menu de navigation de votre site (en fonction de votre thème). La plupart des gens commencent par écrire une page « À Propos » qui les présente aux visiteurs potentiels du site. Vous pourriez y écrire quelque chose de ce tenant :\n\n<blockquote>Bonjour ! Je suis un mécanicien qui aspire à devenir un acteur, et ceci est mon blog. J’habite à Bordeaux, j’ai un super chien qui s’appelle Russell, et j’aime la vodka-ananas (ainsi que perdre mon temps à regarder la pluie tomber).</blockquote>\n\n...ou bien quelque chose comme cela :\n\n<blockquote>La société 123 Machin Truc a été créée en 1971, et n’a cessé de proposer au public des machins-trucs de qualité depuis cette année. Située à Saint-Remy-en-Bouzemont-Saint-Genest-et-Isson, 123 Machin Truc emploie 2 000 personnes, et fabrique toutes sortes de bidules super pour la communauté bouzemontoise.</blockquote>\n\nÉtant donné que vous êtes un nouvel utilisateur ou une nouvelle utilisatrice de WordPress, vous devriez vous rendre sur votre <a href=\"http://localhost/Corona-19/wp-admin/\">tableau de bord</a> pour effacer la présente page, et créer de nouvelles pages avec votre propre contenu. Amusez-vous bien !', 'Page d’exemple', '', 'publish', 'closed', 'open', '', 'page-d-exemple', '', '', '2020-04-03 23:31:35', '2020-04-03 21:31:35', '', 0, 'http://localhost/Corona-19/?page_id=2', 0, 'page', '', 0),
 (3, 1, '2020-04-03 23:31:35', '2020-04-03 21:31:35', '<h2>Qui sommes-nous ?</h2><p>L’adresse de notre site Web est : http://localhost/Corona-19.</p><h2>Utilisation des données personnelles collectées</h2><h3>Commentaires</h3><p>Quand vous laissez un commentaire sur notre site web, les données inscrites dans le formulaire de commentaire, mais aussi votre adresse IP et l’agent utilisateur de votre navigateur sont collectés pour nous aider à la détection des commentaires indésirables.</p><p>Une chaîne anonymisée créée à partir de votre adresse de messagerie (également appelée hash) peut être envoyée au service Gravatar pour vérifier si vous utilisez ce dernier. Les clauses de confidentialité du service Gravatar sont disponibles ici : https://automattic.com/privacy/. Après validation de votre commentaire, votre photo de profil sera visible publiquement à coté de votre commentaire.</p><h3>Médias</h3><p>Si vous êtes un utilisateur ou une utilisatrice enregistré·e et que vous téléversez des images sur le site web, nous vous conseillons d’éviter de téléverser des images contenant des données EXIF de coordonnées GPS. Les visiteurs de votre site web peuvent télécharger et extraire des données de localisation depuis ces images.</p><h3>Formulaires de contact</h3><h3>Cookies</h3><p>Si vous déposez un commentaire sur notre site, il vous sera proposé d’enregistrer votre nom, adresse de messagerie et site web dans des cookies. C’est uniquement pour votre confort afin de ne pas avoir à saisir ces informations si vous déposez un autre commentaire plus tard. Ces cookies expirent au bout d’un an.</p><p>Si vous avez un compte et que vous vous connectez sur ce site, un cookie temporaire sera créé afin de déterminer si votre navigateur accepte les cookies. Il ne contient pas de données personnelles et sera supprimé automatiquement à la fermeture de votre navigateur.</p><p>Lorsque vous vous connecterez, nous mettrons en place un certain nombre de cookies pour enregistrer vos informations de connexion et vos préférences d’écran. La durée de vie d’un cookie de connexion est de deux jours, celle d’un cookie d’option d’écran est d’un an. Si vous cochez « Se souvenir de moi », votre cookie de connexion sera conservé pendant deux semaines. Si vous vous déconnectez de votre compte, le cookie de connexion sera effacé.</p><p>En modifiant ou en publiant une publication, un cookie supplémentaire sera enregistré dans votre navigateur. Ce cookie ne comprend aucune donnée personnelle. Il indique simplement l’ID de la publication que vous venez de modifier. Il expire au bout d’un jour.</p><h3>Contenu embarqué depuis d’autres sites</h3><p>Les articles de ce site peuvent inclure des contenus intégrés (par exemple des vidéos, images, articles…). Le contenu intégré depuis d’autres sites se comporte de la même manière que si le visiteur se rendait sur cet autre site.</p><p>Ces sites web pourraient collecter des données sur vous, utiliser des cookies, embarquer des outils de suivis tiers, suivre vos interactions avec ces contenus embarqués si vous disposez d’un compte connecté sur leur site web.</p><h3>Statistiques et mesures d’audience</h3><h2>Utilisation et transmission de vos données personnelles</h2><h2>Durées de stockage de vos données</h2><p>Si vous laissez un commentaire, le commentaire et ses métadonnées sont conservés indéfiniment. Cela permet de reconnaître et approuver automatiquement les commentaires suivants au lieu de les laisser dans la file de modération.</p><p>Pour les utilisateurs et utilisatrices qui s’enregistrent sur notre site (si cela est possible), nous stockons également les données personnelles indiquées dans leur profil. Tous les utilisateurs et utilisatrices peuvent voir, modifier ou supprimer leurs informations personnelles à tout moment (à l’exception de leur nom d’utilisateur·ice). Les gestionnaires du site peuvent aussi voir et modifier ces informations.</p><h2>Les droits que vous avez sur vos données</h2><p>Si vous avez un compte ou si vous avez laissé des commentaires sur le site, vous pouvez demander à recevoir un fichier contenant toutes les données personnelles que nous possédons à votre sujet, incluant celles que vous nous avez fournies. Vous pouvez également demander la suppression des données personnelles vous concernant. Cela ne prend pas en compte les données stockées à des fins administratives, légales ou pour des raisons de sécurité.</p><h2>Transmission de vos données personnelles</h2><p>Les commentaires des visiteurs peuvent être vérifiés à l’aide d’un service automatisé de détection des commentaires indésirables.</p><h2>Informations de contact</h2><h2>Informations supplémentaires</h2><h3>Comment nous protégeons vos données</h3><h3>Procédures mises en œuvre en cas de fuite de données</h3><h3>Les services tiers qui nous transmettent des données</h3><h3>Opérations de marketing automatisé et/ou de profilage réalisées à l’aide des données personnelles</h3><h3>Affichage des informations liées aux secteurs soumis à des régulations spécifiques</h3>', 'Politique de confidentialité', '', 'draft', 'closed', 'open', '', 'politique-de-confidentialite', '', '', '2020-04-03 23:31:35', '2020-04-03 21:31:35', '', 0, 'http://localhost/Corona-19/?page_id=3', 0, 'page', '', 0),
 (4, 1, '2020-04-03 23:33:48', '0000-00-00 00:00:00', '', 'Brouillon auto', '', 'auto-draft', 'open', 'open', '', '', '', '', '2020-04-03 23:33:48', '0000-00-00 00:00:00', '', 0, 'http://localhost/Corona-19/?p=4', 0, 'post', '', 0),
-(6, 1, '2020-04-04 00:12:52', '2020-04-03 22:12:52', '<label> Covid-19 Questionnaire\r\n    [text your-subject] </label>\r\n\r\n<label> Votre Nom et Prénom (required)\r\n    [text* your-name] </label>\r\n\r\n<label> Email (required)\r\n    [email* your-email] </label>\r\n\r\n[textarea textarea-282 \"Question 1 sur 12\"]\r\n[textarea textarea-282 \"Ces derniers jours, avez-vous eu ou ressenti un de ces symptômes ?\"]\r\n[checkbox checkbox-424 label_first \"Vous avez de la fièvre (Température>37°8)\" \"Vous avez une toux et une difficulté respiratoire\" \"Vous avez une diarrhée (au moins 3 selles molles/j)\" \"Vous avez des céphalées (maux de tête)\"]\r\n\r\n\r\n\r\n<label> Suggestion\r\n    [textarea your-message] </label>\r\n\r\n[submit \"Send\"]\n1\nCorona Virus \"[your-subject]\"\nCorona Virus <heni.zribi92@gmail.com>\nheni.zribi92@gmail.com\nFrom: [your-name] <[your-email]>\r\nSubject: [your-subject]\r\n\r\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis e-mail was sent from a contact form on Corona Virus (http://localhost/Corona-19)\nReply-To: [your-email]\n\n\n\n\nCorona Virus \"[your-subject]\"\nCorona Virus <heni.zribi92@gmail.com>\n[your-email]\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis e-mail was sent from a contact form on Corona Virus (http://localhost/Corona-19)\nReply-To: heni.zribi92@gmail.com\n\n\n\nThank you for your message. It has been sent.\nThere was an error trying to send your message. Please try again later.\nOne or more fields have an error. Please check and try again.\nThere was an error trying to send your message. Please try again later.\nYou must accept the terms and conditions before sending your message.\nThe field is required.\nThe field is too long.\nThe field is too short.\nThe date format is incorrect.\nThe date is before the earliest one allowed.\nThe date is after the latest one allowed.\nThere was an unknown error uploading the file.\nYou are not allowed to upload files of this type.\nThe file is too big.\nThere was an error uploading the file.\nThe number format is invalid.\nThe number is smaller than the minimum allowed.\nThe number is larger than the maximum allowed.\nThe answer to the quiz is incorrect.\nThe e-mail address entered is invalid.\nThe URL is invalid.\nThe telephone number is invalid.', 'Formulaire', '', 'publish', 'closed', 'closed', '', 'contact-form-1', '', '', '2020-04-04 01:10:03', '2020-04-03 23:10:03', '', 0, 'http://localhost/Corona-19/?post_type=wpcf7_contact_form&#038;p=6', 0, 'wpcf7_contact_form', '', 0);
+(6, 1, '2020-04-04 00:12:52', '2020-04-03 22:12:52', '<label> Covid-19 Questionnaire\r\n    [text your-subject] </label>\r\n\r\n<label> Votre Nom et Prénom (required)\r\n    [text* your-name] </label>\r\n\r\n<label> Email (required)\r\n    [email* your-email] </label>\r\n\r\n[text text-936 \"Question 1 sur 12\"]\r\n[text text-936 \"Ces derniers jours, avez-vous eu ou ressenti un de ces symptômes ?\"]\r\n[checkbox checkbox-424 label_first \"Vous avez de la fièvre (Température>37°8)\" \"Vous avez une toux et une difficulté respiratoire\" \"Vous avez une diarrhée (au moins 3 selles molles/j)\" \"Vous avez des céphalées (maux de tête)\"]\r\n\r\n[text text-937 \"Question 2 sur 12\"]\r\n[text text-937 \"Est-ce que vous avez été en voyage à l\'étranger ces deux dernières semaines ?\"]\r\n[checkbox checkbox-765  label_first \"Oui\" \"Non\"]\r\n\r\n[text text-938 \"Question 3 sur 12\"]\r\n[text text-938 \"Est-ce que vous avez été en contact, pendant les deux dernières semaines, avec une personne revenant d’un voyage à l\'étranger?\"]\r\n[checkbox checkbox-766 label_first \"Oui\" \"Non\"]\r\n\r\n[text text-939 \"Question 4 sur 12\"]\r\n[text text-939 \"Est-ce que vous avez été en contact, pendant les deux dernières semaines, avec une personne atteinte du Coronavirus ?\"]\r\n[checkbox checkbox-767 label_first \"Oui\" \"Non\"]\r\n\r\n[text text-940 \"Question 5 sur 12\"]\r\n[text text-940 \"Quelle est votre année de naissance ?\"]\r\n[date date-793 placeholder]\r\n\r\n[text text-941 \"Question 6 sur 12\"]\r\n[text text-941 \"Quel est votre genre ?\"]\r\n[checkbox checkbox-768 label_first \"Masculin\" \"Féminin\"]\r\n\r\n[text text-942 \"Question 7 sur 12\"]\r\n[text text-942 \"Quel est votre poids (en kg)?\"]\r\n[textarea textarea-468]\r\n\r\n\r\n<label> Suggestion\r\n    [textarea your-message] </label>\r\n\r\n[submit \"Send\"]\n1\nCorona Virus \"[your-subject]\"\nCorona Virus <heni.zribi92@gmail.com>\nheni.zribi92@gmail.com\nFrom: [your-name] <[your-email]>\r\nSubject: [your-subject]\r\n\r\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis e-mail was sent from a contact form on Corona Virus (http://localhost/Corona-19)\nReply-To: [your-email]\n\n\n\n\nCorona Virus \"[your-subject]\"\nCorona Virus <heni.zribi92@gmail.com>\n[your-email]\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis e-mail was sent from a contact form on Corona Virus (http://localhost/Corona-19)\nReply-To: heni.zribi92@gmail.com\n\n\n\nThank you for your message. It has been sent.\nThere was an error trying to send your message. Please try again later.\nOne or more fields have an error. Please check and try again.\nThere was an error trying to send your message. Please try again later.\nYou must accept the terms and conditions before sending your message.\nThe field is required.\nThe field is too long.\nThe field is too short.\nThe date format is incorrect.\nThe date is before the earliest one allowed.\nThe date is after the latest one allowed.\nThere was an unknown error uploading the file.\nYou are not allowed to upload files of this type.\nThe file is too big.\nThere was an error uploading the file.\nThe number format is invalid.\nThe number is smaller than the minimum allowed.\nThe number is larger than the maximum allowed.\nThe answer to the quiz is incorrect.\nThe e-mail address entered is invalid.\nThe URL is invalid.\nThe telephone number is invalid.', 'Formulaire', '', 'publish', 'closed', 'closed', '', 'contact-form-1', '', '', '2020-04-04 01:34:23', '2020-04-03 23:34:23', '', 0, 'http://localhost/Corona-19/?post_type=wpcf7_contact_form&#038;p=6', 0, 'wpcf7_contact_form', '', 0);
 
 -- --------------------------------------------------------
 
@@ -460,6 +532,26 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 --
 
 --
+-- Index pour la table `config`
+--
+ALTER TABLE `config`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `espace`
+--
+ALTER TABLE `espace`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `pseudo` (`pseudo`);
+
+--
+-- Index pour la table `membres`
+--
+ALTER TABLE `membres`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `pseudo` (`pseudo`);
+
+--
 -- Index pour la table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
@@ -563,6 +655,24 @@ ALTER TABLE `wp_users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `config`
+--
+ALTER TABLE `config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `espace`
+--
+ALTER TABLE `espace`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT pour la table `membres`
+--
+ALTER TABLE `membres`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
@@ -584,7 +694,7 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT pour la table `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- AUTO_INCREMENT pour la table `wp_postmeta`
