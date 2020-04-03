@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : ven. 03 avr. 2020 à 23:43
+-- Hôte : localhost
+-- Généré le : sam. 04 avr. 2020 à 00:54
 -- Version du serveur :  10.4.11-MariaDB
--- Version de PHP : 7.4.4
+-- Version de PHP : 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,6 +21,78 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `corona_19`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `config`
+--
+
+CREATE TABLE `config` (
+  `id` int(11) NOT NULL,
+  `cat` varchar(256) NOT NULL,
+  `prod` varchar(256) NOT NULL,
+  `debpd` varchar(256) NOT NULL,
+  `s_mail` varchar(256) NOT NULL,
+  `mail` varchar(256) NOT NULL,
+  `nom_site` varchar(256) NOT NULL,
+  `nom_mail` varchar(256) NOT NULL,
+  `newp` varchar(256) NOT NULL,
+  `url` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `config`
+--
+
+INSERT INTO `config` (`id`, `cat`, `prod`, `debpd`, `s_mail`, `mail`, `nom_site`, `nom_mail`, `newp`, `url`) VALUES
+(1, '9', '10', '1000', 'me@ziedmaaloul.site', 'me@ziedmaaloul.site', 'CORONA', 'CORONA', '10', 'http://localhost/Covid-19');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `espace`
+--
+
+CREATE TABLE `espace` (
+  `ID` int(11) NOT NULL,
+  `pseudo` varchar(100) NOT NULL,
+  `pass` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `date_enregistrement` varchar(256) NOT NULL,
+  `nom` varchar(256) NOT NULL,
+  `pays` varchar(256) NOT NULL,
+  `mail` varchar(256) NOT NULL,
+  `tel` varchar(256) NOT NULL,
+  `OPR` longtext NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `espace`
+--
+
+INSERT INTO `espace` (`ID`, `pseudo`, `pass`, `date_enregistrement`, `nom`, `pays`, `mail`, `tel`, `OPR`) VALUES
+(10, 'ziedev', '99030810', '', 'Zied Maaloul', '', 'faiez.maaloul@waoo-digital.com', '', 'intext:\"commentaire\"'),
+(11, 'heni', '99030810', '29-08-2019 12:41:20', 'Heni Zribi', '', 'test@test.ext', '99030810', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `membres`
+--
+
+CREATE TABLE `membres` (
+  `ID` int(11) NOT NULL,
+  `pseudo` varchar(100) NOT NULL,
+  `pass` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `date_enregistrement` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `membres`
+--
+
+INSERT INTO `membres` (`ID`, `pseudo`, `pass`, `date_enregistrement`) VALUES
+(1, 'ziedev', '99030810', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -216,7 +289,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (109, 'widget_tag_cloud', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (110, 'widget_nav_menu', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (111, 'widget_custom_html', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
-(112, 'cron', 'a:4:{i:1585953096;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1585992696;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1586036033;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
+(112, 'cron', 'a:4:{i:1585956696;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1585992696;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1586036033;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
 (113, 'theme_mods_twentyseventeen', 'a:1:{s:18:\"custom_css_post_id\";i:-1;}', 'yes'),
 (120, '_site_transient_timeout_theme_roots', '1585951424', 'no'),
 (121, '_site_transient_theme_roots', 'a:3:{s:13:\"twentyfifteen\";s:7:\"/themes\";s:15:\"twentyseventeen\";s:7:\"/themes\";s:13:\"twentysixteen\";s:7:\"/themes\";}', 'no'),
@@ -243,7 +316,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (142, '_transient_dash_v2_bd94b8f41e74bae2f4dc72e9bd8379af', '<div class=\"rss-widget\"><ul><li><a class=\'rsswidget\' href=\'http://feedproxy.google.com/~r/WordpressFrancophone/~3/IqkX9CU7VW4/\'>Enquête sur l’emploi &amp; les salaires dans l’écosystème WordPress en France (édition 2019)</a></li></ul></div><div class=\"rss-widget\"><ul><li><a class=\'rsswidget\' href=\'http://feedproxy.google.com/~r/wpfr/~3/L0Sp9QfW9BA/\'>Alerte sécurité pour Contact Form 7 Datepicker</a></li><li><a class=\'rsswidget\' href=\'http://feedproxy.google.com/~r/wpfr/~3/GAwn29EGA2g/\'>WPServeur rejoint le groupe CTS / Magic Online</a></li><li><a class=\'rsswidget\' href=\'http://feedproxy.google.com/~r/wpfr/~3/oycMEn2ncuA/\'>WordPress 5.5 – L’auto-update pour ou contre cette nouvelle fonctionnalité ?</a></li></ul></div>', 'no'),
 (144, '_transient_timeout_plugin_slugs', '1586036061', 'no'),
 (145, '_transient_plugin_slugs', 'a:2:{i:0;s:19:\"akismet/akismet.php\";i:1;s:9:\"hello.php\";}', 'no'),
-(146, 'recently_activated', 'a:0:{}', 'yes');
+(146, 'recently_activated', 'a:0:{}', 'yes'),
+(148, '_transient_is_multi_author', '0', 'yes');
 
 -- --------------------------------------------------------
 
@@ -449,6 +523,26 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 --
 
 --
+-- Index pour la table `config`
+--
+ALTER TABLE `config`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `espace`
+--
+ALTER TABLE `espace`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `pseudo` (`pseudo`);
+
+--
+-- Index pour la table `membres`
+--
+ALTER TABLE `membres`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `pseudo` (`pseudo`);
+
+--
 -- Index pour la table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
@@ -552,6 +646,24 @@ ALTER TABLE `wp_users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `config`
+--
+ALTER TABLE `config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `espace`
+--
+ALTER TABLE `espace`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT pour la table `membres`
+--
+ALTER TABLE `membres`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
@@ -573,7 +685,7 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT pour la table `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
 -- AUTO_INCREMENT pour la table `wp_postmeta`
