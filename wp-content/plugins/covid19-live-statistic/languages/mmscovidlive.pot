@@ -1,0 +1,121 @@
+# Copyright (C) 2013 TODO
+# This file is distributed under the same license as the TODO package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Covid19 Live Statistic\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/plugins/plugin-name\n"
+"POT-Creation-Date: 2020-03-21 16:43+0700\n"
+"PO-Revision-Date: 2014-07-07 18:52+0100\n"
+"Last-Translator: Mte90 <mte90net@gmail.com>\n"
+"Language-Team: MD Masud Sikdar <contact@mdmasudsikdar.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html_e;esc_html__;esc_attr_e;"
+"esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: mmscovidlive.php:58
+msgid "Covid-19 Live statistics"
+msgstr ""
+
+#: mmscovidlive.php:59
+msgid "COVID19 Live Statistic"
+msgstr ""
+
+#: mmscovidlive.php:105
+msgid "Every 15 minutes"
+msgstr ""
+
+#: mmscovidlive.php:154
+msgid "Global"
+msgstr ""
+
+#: mmscovidlive.php:156
+msgid "Confirmed"
+msgstr ""
+
+#: mmscovidlive.php:157
+msgid "Deaths"
+msgstr ""
+
+#: mmscovidlive.php:158
+msgid "Recovered"
+msgstr ""
+
+#: templates/admin.php:6
+msgid "Documentation"
+msgstr ""
+
+#: templates/admin.php:7
+msgid "Countries"
+msgstr ""
+
+#: templates/admin.php:9
+msgid "========== Global =========="
+msgstr ""
+
+#: templates/admin.php:16
+msgid "Shortcode"
+msgstr ""
+
+#: templates/admin.php:17
+msgid "[mmscovidlive]"
+msgstr ""
+
+#: templates/admin.php:18
+msgid "Copy & paste this shortcode into post, page or widget."
+msgstr ""
+
+#: templates/admin.php:19
+msgid "Attributes"
+msgstr ""
+
+#: templates/admin.php:21
+msgid "title:"
+msgstr ""
+
+#: templates/admin.php:21
+msgid "Title of box - default is \"Global\""
+msgstr ""
+
+#: templates/admin.php:22
+msgid "label_confirmed:"
+msgstr ""
+
+#: templates/admin.php:22
+msgid "Label Confirmed - default is \"Confirmed\""
+msgstr ""
+
+#: templates/admin.php:23
+msgid "label_deaths:"
+msgstr ""
+
+#: templates/admin.php:23
+msgid "Label Deaths - default is \"Deaths\""
+msgstr ""
+
+#: templates/admin.php:24
+msgid "label_recovered:"
+msgstr ""
+
+#: templates/admin.php:24
+msgid "Label Recovered - default is \"Recovered\""
+msgstr ""
+
+#: templates/admin.php:26
+msgid "Example:"
+msgstr ""
+
+#: templates/admin.php:27
+msgid ""
+"[mmscovidlive country=\"Vietnam\" title=\"Global\" label_confirmed="
+"\"Confirmed\" label_deaths=\"Deaths\" label_recovered=\"Recovered\"]"
+msgstr ""
