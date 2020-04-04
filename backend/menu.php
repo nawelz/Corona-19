@@ -18,15 +18,7 @@
           </a>
           
         </li>
-       
-        <li class="treeview <?php echo $tag_trait; ?>">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Tous les utilisateurs</span>
-            
-          </a>
-         
-        </li>
-		<li class="treeview <?php echo $tag_config; ?>">
+       <li class="treeview <?php echo $tag_config; ?>">
           <a href="#">
             <i class="fa fa-table"></i> <span>Testes Graves</span>
     
