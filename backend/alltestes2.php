@@ -59,7 +59,7 @@ while ($data2 = $tout->fetch()) {
                                     $key_val = ucfirst( $key_val );
                                     $arr_str_data =  implode(', ',$data);
                                   
-                                   //echo '<p><b>'.$key_val.'</b>: '. nl2br($arr_str_data) .'</p>';
+                                  //echo '<p><b>'.$key_val.'</b>: '. nl2br($arr_str_data) .'</p>';
 									if (trim($key_val) == "Id:name")
 									         {
 									         
@@ -94,8 +94,22 @@ while ($data2 = $tout->fetch()) {
 								         {$tab["voi"] = $data;}
 								       if (trim($key_val) == "Contactcorona")
 								         {$tab["cm"] = $data;}
+								      if (trim($key_val) == "Dairrhe")
+								         {$tab["drh"] = $data;}
 								     if (trim($key_val) == "Genre")
 								         {$tab["genre"] = $data[0];}
+								        if (trim($key_val) == "Tete")
+								         {$tab["tete"] = $data;}
+								          if (trim($key_val) == "Gorge")
+								         {$tab["gorge"] = $data;}
+								      if (trim($key_val) == "Fatigue")
+								         {$tab["fatigue"] = $data;}
+								      if (trim($key_val) == "Toux")
+								         {$tab["toux"] = $data;}
+								       if (trim($key_val) == "Courbature")
+								         {$tab["corbature"] = $data;}
+								      if (trim($key_val) == "Contact")
+								         {$tab["epidemie"] = $data;}
 								     
                                 }else{
 
@@ -141,6 +155,22 @@ while ($data2 = $tout->fetch()) {
 								         {$tab["cm"] = $data;}
 								        if (trim($key_val) == "Genre")
 								         {$tab["genre"] = $data[0];}
+								     if (trim($key_val) == "Dairrhe")
+								         {$tab["drh"] = $data;}
+								      if (trim($key_val) == "Tete")
+								         {$tab["tete"] = $data;}
+
+								      if (trim($key_val) == "Gorge")
+								         {$tab["gorge"] = $data;}
+
+								      if (trim($key_val) == "Toux")
+								         {$tab["toux"] = $data;}
+								      if (trim($key_val) == "Fatigue")
+								         {$tab["fatigue"] = $data;}
+								     if (trim($key_val) == "Courbature")
+								         {$tab["corbature"] = $data;}
+								      if (trim($key_val) == "Contact")
+								         {$tab["epidemie"] = $data;}
                                 }
                          
                      //  - - - - - - 
@@ -149,16 +179,20 @@ while ($data2 = $tout->fetch()) {
 	?>
 	<tr>
 		<?php
+		
+$score = get_score($tab["tmp"][0],$tab["resp"][0],$tab["voi"][0],$tab["cm"][0],$tab["drh"][0],$tab["tete"][0],$tab["gorge"][0],$tab["toux"][0],$tab["fatigue"][0],$tab["corbature"][0],$tab["epidemie"][0]);
+$resultat = get_resultat($score);
+$getbutton = get_resultat_button($resultat);
 		$id = $data2["form_id"];
 		if ($tab["genre"] == "Masculin"){$gnr = "man.png";}else {$gnr = "woman.png";}
 		$img = "bower_components/".$gnr;
-		if ($tab["tmp"] == "Oui") {$tempe = '<span class="label label-danger">Oui</span>';}
+		if ($tab["tmp"][0] == "Oui") {$tempe = '<span class="label label-danger">Oui</span>';}
 		else {$tempe = '<span class="label label-success">Non</span>';}
-		if ($tab["resp"] == "Oui") {$respe = '<span class="label label-danger">Oui</span>';}
+		if ($tab["resp"][0] == "Oui") {$respe = '<span class="label label-danger">Oui</span>';}
 		else {$respe = '<span class="label label-success">Non</span>';}
-		if ($tab["voi"] == "Oui") {$voi = '<span class="label label-danger">Oui</span>';}
+		if ($tab["voi"][0] == "Oui") {$voi = '<span class="label label-danger">Oui</span>';}
 		else {$voi = '<span class="label label-success">Non</span>';}
-		if ($tab["cm"] == "Oui") {$cm = '<span class="label label-danger">Oui</span>';}
+		if ($tab["cm"][0] == "Oui") {$cm = '<span class="label label-danger">Oui</span>';}
 		else {$cm = '<span class="label label-success">Non</span>';}
 		?>
 		<td>
@@ -171,7 +205,8 @@ while ($data2 = $tout->fetch()) {
 	<td><?php echo $respe;?></td>
 	<td><?php echo $voi;?></td>
 	<td><?php echo $cm;?></td>
-
+<td><?php echo "Vide Mnt";?></td>
+<td><?php echo $getbutton;?></td>
 	</tr>
 
 	<?php
