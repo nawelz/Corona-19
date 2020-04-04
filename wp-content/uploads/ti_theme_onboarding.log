@@ -1,0 +1,17 @@
+[04/Apr/2020:21:26:40] (ℹ️): WordPress Instance Info:
+[04/Apr/2020:21:26:40] (ℹ️): Home URL : http://localhost/Corona-19
+[04/Apr/2020:21:26:40] (ℹ️): Site URL : http://localhost/Corona-19
+[04/Apr/2020:21:26:40] (ℹ️): WordPress Version : 4.9.13
+[04/Apr/2020:21:26:40] (ℹ️): Onboarding Version : 1.8.2
+[04/Apr/2020:21:26:40] (ℹ️): Multisite : No
+[04/Apr/2020:21:26:40] (ℹ️): Server Info : Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.4
+[04/Apr/2020:21:26:40] (ℹ️): PHP Version : 7.4.4
+[04/Apr/2020:21:26:40] (ℹ️): HTTPS : No
+[04/Apr/2020:21:26:40] (ℹ️): PHP Max Execution Time : 120
+[04/Apr/2020:21:26:40] (ℹ️): PHP Max Input Vars : 1000
+[04/Apr/2020:21:26:40] (ℹ️): Max Upload Size : 41943040
+[04/Apr/2020:21:26:40] (ℹ️): Plugins:
+[04/Apr/2020:21:26:40] (ℹ️): [PLUGIN] Contact form 7 to api + Basic auth : v1.4.2 (Kenny Meyer)
+[04/Apr/2020:21:26:40] (ℹ️): [PLUGIN] Contact Form 7 : v5.1.7 (Takayuki Miyoshi)
+[04/Apr/2020:21:26:40] (ℹ️): [PLUGIN] Contact Form CFDB7 : v1.2.4.8 (Arshid)
+[04/Apr/2020:21:26:40] (ℹ️): [PLUGIN] Corona Virus Data : v1.2.6 (Duke Yin)
