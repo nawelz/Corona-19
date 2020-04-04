@@ -18,15 +18,16 @@
           </a>
           
         </li>
-       
-        <li class="treeview <?php echo $tag_trait; ?>">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Tous les utilisateurs</span>
+
+        <li>
+          <a href="allqtn.php">
+            <i class="fa fa-pie-chart"></i>
+            <span>Quarantaines</span>
             
           </a>
-         
+          
         </li>
-		<li class="treeview <?php echo $tag_config; ?>">
+       <li class="treeview <?php echo $tag_config; ?>">
           <a href="#">
             <i class="fa fa-table"></i> <span>Testes Graves</span>
     

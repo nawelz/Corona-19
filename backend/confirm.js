@@ -1,28 +1,15 @@
 
-function validerajoutersiteareferencer()
-{
-if (confirm('Êtes vous dajuoter ce site \n \n La demarche est définitive et ne peut être inversée.'))
-{
-	alert (document.getElementById('formaddsite').nom.value);
-document.getElementById('formaddsite').submit();
-}
-else
-{
-	return false;
-	}
-}
-
 function sleep(seconds){
     var waitUntil = new Date().getTime() + seconds*1000;
     while(new Date().getTime() < waitUntil) true;
 }
 
-function deletebynameandid(name,id,message)
+function mettre_en_quarantaine(name,id,message)
 {
 
-if (confirm('Êtes vous sure de supprimer ce site écarté'+message+' \n \n La demarche est définitive et ne peut être inversée.'))
+if (confirm('Êtes vous sure de mettre en carantaine le patient '+message))
 {
-	var namefile = 'http://e-reputation.seo-professionnel.fr/'+name+'.php?id='+id;
+	var namefile = 'http://localhost/Corona-19/backend/mettreenquarantaine.php?id='+id;
 	// Création d'une requête HTTP
 var req = new XMLHttpRequest();
 // Requête HTTP GET synchrone vers le fichier langages.txt publié localement
@@ -30,7 +17,7 @@ req.open("GET", namefile, false);
 // Envoi de la requête
 req.send(null);
 sleep(1);
-alert(name+' est supprimé avec succée');
+alert(message+' est mis en quarantaine avec succée');
 location.reload();
 }
 else

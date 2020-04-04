@@ -34,7 +34,7 @@
 				  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending">Date</th>
 				  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending">Statut</th>
 				 
-				  <th style="width: 10%">Supprimer</th>
+				  <th style="width: 10%">Quarantaine</th>
 				  
                 </tr>
                  </thead>
@@ -207,6 +207,35 @@ $getbutton = get_resultat_button($resultat);
 	<td><?php echo $cm;?></td>
 <td><?php echo "Vide Mnt";?></td>
 <td><?php echo $getbutton;?></td>
+
+<td>
+	<?php 
+	if ($data2["quarantaine"] == "Oui")
+	{
+		if (diff_day($data2["date_quarantaine"])> 15)
+		{
+			?>
+			<strong><span style = "color:green">Sortie</span></strong>
+			<?php
+		}
+		
+		else {
+			?>
+			<strong><span style = "color:orange">Reste <?php echo 15 -diff_day($data2["date_quarantaine"]);?> Jours</span></strong>
+			<?php
+	}
+	}
+	else
+		 {
+		 	$nme = $tab["name"];
+		 	$mis = "mettre_en_quarantaine('','".$id."','".$nme."')";
+		 	?>
+		 	<button type="button" class="btn btn-block btn-danger" onclick="<?php echo $mis; ?>"> <i class= "fa fa-calendar-minus-o"></i> Mettre Danger</button>
+		 	<?php
+		 }
+	?>
+
+</td>
 	</tr>
 
 	<?php
