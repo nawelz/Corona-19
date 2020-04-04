@@ -60,5 +60,17 @@
           </a>
         
         </li>
+         <li class="treeview">
+    
+          <a href="statreel.php">
+            <i class="fa fa-table"></i> <span>Statistiques Réel</span>
+            <span class="pull-right-container">
+      
+           
+       
+            </span>
+          </a>
+        
+        </li>
         </ul>
    
