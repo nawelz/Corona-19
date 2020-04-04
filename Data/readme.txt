@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Page de formulaire
+ http://localhost/Corona-19/formulaire/
+=======
+﻿Page de formulaire
  http://localhost/Corona-19/formulaire/
 
 
