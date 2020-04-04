@@ -9,7 +9,7 @@ function mettre_en_quarantaine(name,id,message)
 
 if (confirm('Êtes vous sure de mettre en carantaine le patient '+message))
 {
-	var namefile = 'http://localhost/mettreenquarantaine.php?id='+id;
+	var namefile = 'http://localhost/Corona-19/backend/mettreenquarantaine.php?id='+id;
 	// Création d'une requête HTTP
 var req = new XMLHttpRequest();
 // Requête HTTP GET synchrone vers le fichier langages.txt publié localement
@@ -17,7 +17,7 @@ req.open("GET", namefile, false);
 // Envoi de la requête
 req.send(null);
 sleep(1);
-alert(message+' est supprimé avec succée');
+alert(message+' est mis en quarantaine avec succée');
 location.reload();
 }
 else

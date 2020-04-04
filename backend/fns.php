@@ -6,6 +6,13 @@ function diff_age($age){
   $jours =  $difference->format('%y');
   return $jours;
 }
+function diff_day($age){
+  $date_ancienne = new DateTime($age);
+  $date_du_jour = new DateTime("now");
+  $difference = $date_ancienne->diff($date_du_jour);
+  $jours =  $difference->format('%d');
+  return $jours;
+}
 function get_score($temperature,$respiratoire,$voiyage,$contactvirus,$diarrhe,$maltete,$gorge,$toux,$fatigue,$corbature,$epidemie){
 $init = 0;
 if ($temperature == "Oui"){$init++;}
@@ -250,6 +257,7 @@ include "db.php";
 include "db.php";
 $thisd = date("Y")."-".date("m")."-".date("d"); 
 $req = "Update wp_db7_forms SET quarantaine = 'Oui' , date_quarantaine = '$thisd' where form_id = '$id'";
+echo $req;
   $tout = $db->query($req); 
   }
 ?>

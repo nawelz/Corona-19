@@ -207,7 +207,35 @@ $getbutton = get_resultat_button($resultat);
 	<td><?php echo $cm;?></td>
 <td><?php echo "Vide Mnt";?></td>
 <td><?php echo $getbutton;?></td>
-<td><?php echo $getbutton;?></td>
+
+<td>
+	<?php 
+	if ($data2["quarantaine"] == "Oui")
+	{
+		if (diff_day($data2["date_quarantaine"])> 15)
+		{
+			?>
+			<strong><span style = "color:green">Sortie</span></strong>
+			<?php
+		}
+		
+		else {
+			?>
+			<strong><span style = "color:orange">Reste <?php echo 15 -diff_day($data2["date_quarantaine"]);?> Jours</span></strong>
+			<?php
+	}
+	}
+	else
+		 {
+		 	$nme = $tab["name"];
+		 	$mis = "mettre_en_quarantaine('','".$id."','".$nme."')";
+		 	?>
+		 	<button type="button" class="btn btn-block btn-danger" onclick="<?php echo $mis; ?>"> <i class= "fa fa-calendar-minus-o"></i> Mettre Danger</button>
+		 	<?php
+		 }
+	?>
+
+</td>
 	</tr>
 
 	<?php
