@@ -36,10 +36,10 @@
           <tbody>
 <?php
 $tout = $db->query("SELECT * FROM wp_db7_forms"); 
-while ($data = $tout->fetch()) {
+while ($data2 = $tout->fetch()) {
 	$tab = array();
 	$i = 0;
-	$form_data = unserialize($data["form_value"]);
+	$form_data = unserialize($data2["form_value"]);
 	foreach ($form_data as $key => $data){
 
                             $matches = array();
@@ -96,7 +96,7 @@ while ($data = $tout->fetch()) {
                        }
 	?>
 	<tr>
-		<td><?php echo $tab[1];?><td>
+		<td><?php echo $tab[0];?><td>
 		<td><?php echo $tab[0];?><td>
 		<td><?php echo $tab[1];?><td>
 			<td><?php echo $tab[0];?><td>
