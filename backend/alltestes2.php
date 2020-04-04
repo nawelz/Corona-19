@@ -23,17 +23,90 @@
              <thead>
               <tr role="row">
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 5%">#</th>
-                  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 30%">Site Web</th>
-                  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 15%"> Date Ajout</th>
-				  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 15%">Date M.A.J *</th>
-                  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 10px">D.A</th>
-				  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 10px">P.A</th>
-				  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 10%">Lien Ext.</th>
+                  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 30%">Nom Patient</th>
+                  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 15%"> Téléphone</th>
+				  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 15%">Ville</th>
+                  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 10px">Age</th>
+				  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 10px">Date</th>
+				  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending" style="width: 10%">Statut</th>
 				  <th style="width: 10%">Supprimer</th>
 				  
                 </tr>
                  </thead>
           <tbody>
+<?php
+$tout = $db->query("SELECT * FROM wp_db7_forms"); 
+while ($data = $tout->fetch()) {
+	$tab = array();
+	$i = 0;
+	$form_data = unserialize($data["form_value"]);
+	foreach ($form_data as $key => $data){
+
+                            $matches = array();
+
+                            if ( $key == 'cfdb7_status' )  continue;
+                      
+                            if( ! empty($matches[0]) ) continue;
+
+                                     if ( is_array($data) ) {
+
+                                    $key_val = str_replace('your-', '', $key);
+                                    $key_val = ucfirst( $key_val );
+                                    $arr_str_data =  implode(', ',$data);
+                                  
+                                   // echo '<p><b>'.$key_val.'</b>: '. nl2br($arr_str_data) .'</p>';
+									if (trim($key_val) == "Id:name")
+									         {
+									         
+									         	$tab[$i] = $data;
+									         	$i++;
+									         }
+									          if (trim($key_val) == "Id:tel")
+								         {
+								         
+								         	$tab[$i] = $data;
+								         	$i++;
+
+								         }
+                                }else{
+
+                                    $key_val = str_replace('your-', '', $key);
+                                    $key_val = ucfirst( $key_val );
+                              
+                                    //echo '<p><b>'.$key_val.'</b>: '.nl2br($data).'</p>';
+                                    if (trim($key_val) == "Id:name")
+								         {
+								        
+								         	$tab[$i] = $data;
+								         	$i++;
+
+								         }
+
+								          if (trim($key_val) == "Id:tel")
+								         {
+								         
+								         	$tab[$i] = $data;
+								         	$i++;
+
+								         }
+                                }
+                         
+                     //  - - - - - - 
+
+                       }
+	?>
+	<tr>
+		<td><?php echo $tab[1];?><td>
+		<td><?php echo $tab[0];?><td>
+		<td><?php echo $tab[1];?><td>
+			<td><?php echo $tab[0];?><td>
+	</tr>
+
+	<?php
+
+
+}
+?>
 
               </tbody></table>
 			  
@@ -44,60 +117,14 @@
           <!-- /.box -->
         </div>
 
-<?php
-$tout = $db->query("SELECT * FROM wp_db7_forms"); 
-while ($data = $tout->fetch()) {
-
-	echo "Without Traitement <br>".$data["form_value"]."<br><br>";
-	$form_data = unserialize($data["form_value"]);
 
 
 
 
 
 
- foreach ($form_data as $key => $data):
 
-                            $matches = array();
-
-                            if ( $key == 'cfdb7_status' )  continue;
-                      
-                            if( ! empty($matches[0]) ) continue;
-
-                            if ( strpos($key, 'cfdb7_file') !== false ){
-
-                                $key_val = str_replace('cfdb7_file', '', $key);
-                                $key_val = str_replace('your-', '', $key_val);
-                                $key_val = ucfirst( $key_val );
-                                echo '<p><b>'.$key_val.'</b>: <a href="'.$cfdb7_dir_url.'/'.$data.'">'
-                                .$data.'</a></p>';
-                            }else{
-
-
-                                if ( is_array($data) ) {
-
-                                    $key_val = str_replace('your-', '', $key);
-                                    $key_val = ucfirst( $key_val );
-                                    $arr_str_data =  implode(', ',$data);
-                                  
-                                    echo '<p><b>'.$key_val.'</b>: '. nl2br($arr_str_data) .'</p>';
-
-                                }else{
-
-                                    $key_val = str_replace('your-', '', $key);
-                                    $key_val = ucfirst( $key_val );
-                              
-                                    echo '<p><b>'.$key_val.'</b>: '.nl2br($data).'</p>';
-                                }
-                            }
-
-                        endforeach;
-
-
-
-}
-?>
-
+ 
 
 
 	
