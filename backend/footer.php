@@ -1,9 +1,9 @@
 <!-- jQuery 3 -->
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> Production
+      <b>HACK4</b>CORONA
     </div>
-    <strong>Copyright &copy; 2020 <a href="https://www.waoo-digital.com/" target='_blank'>Waoo Digital </a>.</strong> Tous les droits réservé.
+    <strong>Copyright &copy; 2020 <a href="https://www.ziedmaaloul.site/" target='_blank'>Zied Maaloul & Heni Zribi </a>.</strong> Tous les droits réservé.
   </footer>
  <script src="bower_components/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
   <script src="bower_components/chosen.jquery.js" type="text/javascript"></script>
