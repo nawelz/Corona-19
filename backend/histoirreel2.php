@@ -50,14 +50,12 @@ $readjson = file_get_contents('https://pomber.github.io/covid19/timeseries.json'
 //Decode JSON
 $data = json_decode($readjson, true);
 
-//Print data
-print_r($data);
 echo "<br/><br/> Employee names are: <br/>";
 
 //Parse the employee name
 foreach ($data as $emp) {
 
-  echo $emp->Tunisia."<br/>";
+  echo $emp->Tunisia."<br/> --------- <br/>";
 }
 ?>
 
