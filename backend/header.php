@@ -1,8 +1,6 @@
 <?php 
 //error_reporting(0);
 include 'db.php';
-include "functions.php";
-include "function_lib.php";
 include "getuser.php";
 if(isset($_SESSION['SiteSelect']))
 {
