@@ -1,0 +1,111 @@
+== Changelog ==
+
+= 1.3.4 =
+* add new brand section
+* added plugin recommendation
+
+= 1.3.3 =
+* issue fixed in slider 
+* add background color in footer
+* add text color in footer
+* increase number of page in testimonial
+* minor issue fixed
+
+= 1.3.2 =
+* issue fixed.
+
+= 1.3.1 =
+* sub nav issue fixed.
+
+= 1.3.0 =
+* som issue fixed.
+
+= 1.2.9 =
+* Theme URL maintained.
+
+= 1.2.7 =
+* Update to pro URL maintianed
+
+= 1.2.6 =
+* Image on category/blog archive section
+* Design bug fixed
+
+= 1.2.5 =
+* Number of slider increase to 4
+
+
+= 1.2.4 =
+* Breadcrum changed
+* Banner fixed for feature option added
+
+= 1.2.3 =
+* Woocommerce added
+* inner page designed maintained
+
+= 1.2.2 =
+* Solved problem of saving value on customizer
+
+= 1.2.1 =
+* Unexpected site error fix.
+
+= 1.2.0 =
+* Update on custom CSS field for 4.7.
+
+= 1.1.5 =
+* Thumbnail option in testimonial
+
+= 1.1.4 =
+* Added footer widgets
+
+= 1.1.3 =
+* Minor design fixed
+
+= 1.1.2=
+* Main Slider changed from bx slider to cycle 2 slider
+	- Slide item numbers control
+	- Vertical effect added
+* Minor design fixed
+
+= 1.1.1=
+* Minor issues fixing 
+* slider option added
+
+= 1.1.0=
+* Minor issues fixing 
+* Category option for Homepage Blog
+
+= 1.0.9=
+* Minor issues fixing 
+* Remove deprecated tags.
+
+= 1.0.8=
+* Popular plugins supported
+* Minor issues fixing 
+
+= 1.0.7 =
+*  Resized image for slider and blog section
+*  Word count maintained for listing items
+*  Minor design issues Fixed
+
+= 1.0.6 =
+*  Slider caption design issue fixed
+*  Minor design issues Fixed
+
+= 1.0.5 =
+*  Upgrade to Pro link added
+*  RTL Language Support
+
+= 1.0.4 =
+*  One more prefix fixed
+
+= 1.0.3 =
+*  Fixed all prefixes
+
+= 1.0.2 =
+* Requires issues fixed
+
+= 1.0.1 =
+* Features added
+
+= 1.0.0 =
+* Initial submission to WordPress repository

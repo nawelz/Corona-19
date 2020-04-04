@@ -1,0 +1,670 @@
+# Copyright (C) 2015 eVisionThemes
+# This file is distributed under the GNU General Public License v2 or later.
+
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Bizlight\n"
+"POT-Creation-Date: 2015-12-02 14:07+0545\n"
+"PO-Revision-Date: 2015-12-02 14:06+0545\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:13
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:24
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:32
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:49
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:40 comments.php:61
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:43 comments.php:64
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:44 comments.php:65
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:77
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:72
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:73
+msgid "Social Menu"
+msgstr ""
+
+#: inc/customizer/colors/general.php:11
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/colors/general.php:12
+msgid "Customize colors of you awesome site"
+msgstr ""
+
+#: inc/customizer/colors/general.php:20
+msgid "Basic Colors Options"
+msgstr ""
+
+#: inc/customizer/colors/general.php:27
+msgid "Bizlight Colors Reset"
+msgstr ""
+
+#: inc/customizer/colors/general.php:76
+msgid "Link Color"
+msgstr ""
+
+#: inc/customizer/colors/general.php:89
+msgid "Link Hover Color"
+msgstr ""
+
+#: inc/customizer/colors/general.php:102
+msgid "Heading (H1-H6) Color"
+msgstr ""
+
+#: inc/customizer/colors/general.php:115
+msgid "Site Identity Color"
+msgstr ""
+
+#: inc/customizer/colors/general.php:116
+msgid "Site title and tagline color"
+msgstr ""
+
+#: inc/customizer/colors/general.php:133
+msgid "Reset"
+msgstr ""
+
+#: inc/customizer/colors/general.php:134
+msgid ""
+"Caution: Reset all above color settings to default. Refresh the page after "
+"save to view the effects. "
+msgstr ""
+
+#: inc/customizer/customizer.php:124 inc/customizer/customizer.php:134
+msgid "Reset All Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:135
+msgid ""
+"Caution: Reset all options settings to default. Refresh the page after save "
+"to view the effects. "
+msgstr ""
+
+#: inc/customizer/featured-slider/enable-slider.php:15
+msgid "Slider Enable Options"
+msgstr ""
+
+#: inc/customizer/featured-slider/enable-slider.php:25
+msgid "Enable Slider On"
+msgstr ""
+
+#: inc/customizer/featured-slider/from-page.php:15
+msgid "Select Slider From Page"
+msgstr ""
+
+#: inc/customizer/featured-slider/from-page.php:16
+msgid " Recommended featured image size 1360 * 530 for selected pages"
+msgstr ""
+
+#: inc/customizer/featured-slider/from-page.php:29
+#, php-format
+msgid "Select Page For Slide %s"
+msgstr ""
+
+#: inc/customizer/featured-slider/slider-options.php:16
+msgid "Slider Options"
+msgstr ""
+
+#: inc/customizer/featured-slider/slider-options.php:26
+msgid "Enable Control"
+msgstr ""
+
+#: inc/customizer/featured-slider/slider-options.php:40
+msgid "Enable Autoplay"
+msgstr ""
+
+#: inc/customizer/featured-slider/slider-panel.php:6
+msgid "Home/Front Featured Slider"
+msgstr ""
+
+#: inc/customizer/font-setting/font-family.php:11
+msgid "Font Setting"
+msgstr ""
+
+#: inc/customizer/font-setting/font-family.php:40
+msgid "Font Family"
+msgstr ""
+
+#: inc/customizer/font-setting/font-family.php:51
+msgid "Site Identity Font Family"
+msgstr ""
+
+#: inc/customizer/font-setting/font-family.php:52
+msgid "Site title and tagline font family"
+msgstr ""
+
+#: inc/customizer/font-setting/font-family.php:67
+msgid "H1-H6 Font Family"
+msgstr ""
+
+#: inc/customizer/home-options/about/about-options.php:9
+msgid "WELCOME TO BIZLIGHT"
+msgstr ""
+
+#: inc/customizer/home-options/about/about-options.php:10
+msgid "About us short description"
+msgstr ""
+
+#: inc/customizer/home-options/about/about-options.php:17
+msgid "About Options"
+msgstr ""
+
+#: inc/customizer/home-options/about/about-options.php:28
+#: inc/customizer/home-options/home-blog.php:26
+#: inc/customizer/home-options/home-featured.php:24
+#: inc/customizer/home-options/service/service-options.php:26
+msgid "Main Title"
+msgstr ""
+
+#: inc/customizer/home-options/about/about-options.php:41
+msgid "Short Description"
+msgstr ""
+
+#: inc/customizer/home-options/about/about-options.php:55
+msgid "Right Site Image"
+msgstr ""
+
+#: inc/customizer/home-options/about/about-options.php:56
+msgid ""
+"Recommended image size 480 * 540, If you remove image the default image will "
+"show"
+msgstr ""
+
+#: inc/customizer/home-options/about/about-panel.php:6
+msgid "Home/Front About Section"
+msgstr ""
+
+#: inc/customizer/home-options/about/enable-about.php:15
+msgid "About Enable Options"
+msgstr ""
+
+#: inc/customizer/home-options/about/enable-about.php:25
+msgid "Enable About"
+msgstr ""
+
+#: inc/customizer/home-options/about/from-page.php:16
+msgid "Select About From Page"
+msgstr ""
+
+#: inc/customizer/home-options/about/from-page.php:29
+#: inc/customizer/home-options/service/from-page.php:29
+#, php-format
+msgid "Icon %s"
+msgstr ""
+
+#: inc/customizer/home-options/about/from-page.php:33
+#: inc/customizer/home-options/service/from-page.php:33
+#, php-format
+msgid "Use font awesome icon: Eg: %s. %sSee more here%s"
+msgstr ""
+
+#: inc/customizer/home-options/about/from-page.php:41
+#, php-format
+msgid "Select Page For About %s"
+msgstr ""
+
+#: inc/customizer/home-options/home-blog.php:9
+msgid "LATEST NEWS"
+msgstr ""
+
+#: inc/customizer/home-options/home-blog.php:16
+msgid "Home/Front Blog Options"
+msgstr ""
+
+#: inc/customizer/home-options/home-blog.php:40
+msgid "Enable Blog"
+msgstr ""
+
+#: inc/customizer/home-options/home-featured.php:8
+msgid "WANT TO KNOW MORE ABOUT OUR COMPANY?"
+msgstr ""
+
+#: inc/customizer/home-options/home-featured.php:15
+msgid "Home/Front Featured Section"
+msgstr ""
+
+#: inc/customizer/home-options/home-featured.php:37
+msgid "Learn More Button Link"
+msgstr ""
+
+#: inc/customizer/home-options/home-featured.php:50
+msgid "Home Featured Enable"
+msgstr ""
+
+#: inc/customizer/home-options/service/enable-service.php:15
+msgid "Service Enable Options"
+msgstr ""
+
+#: inc/customizer/home-options/service/enable-service.php:25
+msgid "Enable Service"
+msgstr ""
+
+#: inc/customizer/home-options/service/from-page.php:16
+msgid "Select Service From Page"
+msgstr ""
+
+#: inc/customizer/home-options/service/from-page.php:41
+#, php-format
+msgid "Select Page For Service %s"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-options.php:9
+msgid "Our Services"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-options.php:15
+msgid "Service Options"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-panel.php:6
+msgid "Home/Front Service Section"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-selection.php:15
+msgid "Service Selection Options"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-selection.php:25
+msgid "Select Service From"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-selection.php:26
+msgid ""
+"After selecting one of the option, please go back and go to particular "
+"section to add"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-selection.php:30
+#: inc/function/breadcrumb.php:147
+msgid "Page"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-selection.php:31
+msgid "Category"
+msgstr ""
+
+#: inc/customizer/home-options/service/service-selection.php:32
+msgid "Custom"
+msgstr ""
+
+#: inc/customizer/home-options/testimonial/enable-testimonial.php:15
+msgid "Testimonial Enable Options"
+msgstr ""
+
+#: inc/customizer/home-options/testimonial/enable-testimonial.php:25
+msgid "Enable Testimonial"
+msgstr ""
+
+#: inc/customizer/home-options/testimonial/from-page.php:15
+msgid "Select Testimonial From Page"
+msgstr ""
+
+#: inc/customizer/home-options/testimonial/from-page.php:28
+#, php-format
+msgid "Select Page For Testimonial %s"
+msgstr ""
+
+#: inc/customizer/home-options/testimonial/testimonial-panel.php:6
+msgid "Home/Front Testimonial Section"
+msgstr ""
+
+#: inc/customizer/sections/important-links.php:16
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/customizer/sections/important-links.php:20
+msgid "Theme Demo"
+msgstr ""
+
+#: inc/customizer/sections/important-links.php:24
+msgid "Theme Author"
+msgstr ""
+
+#: inc/customizer/sections/important-links.php:28
+msgid "Support"
+msgstr ""
+
+#: inc/customizer/sections/important-links.php:32
+msgid "Review"
+msgstr ""
+
+#: inc/customizer/sections/important-links.php:47
+msgid "Important Links "
+msgstr ""
+
+#: inc/customizer/sections/important-links.php:54
+#: inc/customizer/theme-options/footer.php:25
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer/site-identity/site-identity.php:9
+#, php-format
+msgid "%s If you do not have a logo %s"
+msgstr ""
+
+#: inc/customizer/site-identity/site-identity.php:20
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer/site-identity/site-identity.php:24
+msgid "Recommended logo size 165*50"
+msgstr ""
+
+#: inc/customizer/site-identity/site-identity.php:47
+msgid "Enable Title"
+msgstr ""
+
+#: inc/customizer/site-identity/site-identity.php:60
+msgid "Enable Tagline"
+msgstr ""
+
+#: inc/customizer/theme-options/custom-css.php:13
+#: inc/customizer/theme-options/custom-css.php:23
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/customizer/theme-options/footer.php:8
+msgid "Copyright &copy; eVisionThemes"
+msgstr ""
+
+#: inc/customizer/theme-options/footer.php:14
+msgid "Footer Options"
+msgstr ""
+
+#: inc/customizer/theme-options/footer.php:38
+msgid "Enable Social"
+msgstr ""
+
+#: inc/customizer/theme-options/footer.php:39
+msgid ""
+"Please add Social menus for enabling Social menus. Go to Menus for setting up"
+msgstr ""
+
+#: inc/customizer/theme-options/layout-options.php:14
+msgid "Layout Options"
+msgstr ""
+
+#: inc/customizer/theme-options/layout-options.php:25
+msgid "Default Layout"
+msgstr ""
+
+#: inc/customizer/theme-options/layout-options.php:26
+msgid "Layout for all archives, single posts and pages"
+msgstr ""
+
+#: inc/customizer/theme-options/layout-options.php:30
+msgid "Content - Primary Sidebar"
+msgstr ""
+
+#: inc/customizer/theme-options/layout-options.php:31
+msgid "Primary Sidebar - Content"
+msgstr ""
+
+#: inc/customizer/theme-options/layout-options.php:32
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/customizer/theme-options/option-panel.php:6
+msgid "Theme Options"
+msgstr ""
+
+#: inc/frameworks/coder-customizer-framework/inc/custom-control/coder-category-control.php:36
+#: inc/frameworks/coder-customizer-framework/inc/custom-control/coder-post-dropdown-control.php:47
+#: inc/frameworks/coder-customizer-framework/inc/custom-control/coder-tags-dropdown-control.php:45
+#: inc/frameworks/coder-customizer-framework/inc/custom-control/coder-user-dropdown-control.php:45
+msgid "Select"
+msgstr ""
+
+#: inc/function/breadcrumb.php:20 inc/function/breadcrumb.php:21
+#, php-format
+msgid "Archive for <em>%s</em>"
+msgstr ""
+
+#: inc/function/breadcrumb.php:22
+#, php-format
+msgid "Search results for: <em>%s</em>"
+msgstr ""
+
+#: inc/function/breadcrumb.php:23
+#, php-format
+msgid "Posts tagged <em>%s</em>"
+msgstr ""
+
+#: inc/function/breadcrumb.php:24
+#, php-format
+msgid "View all posts by <em>%s</em>"
+msgstr ""
+
+#: inc/function/breadcrumb.php:25
+msgid "Error 404"
+msgstr ""
+
+#: inc/hooks/featured-slider/featured-main-hook.php:13
+msgid "Welcome to bizlight"
+msgstr ""
+
+#: inc/hooks/featured-slider/featured-main-hook.php:14
+msgid "Unlike other companies, we do not charge hundreds of dollars per theme."
+msgstr ""
+
+#: inc/hooks/featured-slider/featured-main-hook.php:114
+msgid "Click to start"
+msgstr ""
+
+#: inc/hooks/footer.php:38
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: inc/hooks/footer.php:38
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: inc/hooks/footer.php:40
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: inc/hooks/header.php:141
+msgid "Skip to content"
+msgstr ""
+
+#: inc/hooks/homepage-about.php:14
+msgid "Public Voice"
+msgstr ""
+
+#: inc/hooks/homepage-about.php:15 inc/hooks/homepage-about.php:20
+#: inc/hooks/homepage-about.php:25
+msgid ""
+" The set doesn't moved. Deep don't fru it fowl gathering heaven days moving "
+"creeping under from i air. Set it fifth Meat was darkness."
+msgstr ""
+
+#: inc/hooks/homepage-about.php:19
+msgid "Photography"
+msgstr ""
+
+#: inc/hooks/homepage-about.php:24
+msgid "Customization"
+msgstr ""
+
+#: inc/hooks/homepage-featured.php:30
+msgid "LEARN MORE"
+msgstr ""
+
+#: inc/hooks/homepage-service.php:15
+msgid "LOVELY DESIGN"
+msgstr ""
+
+#: inc/hooks/homepage-service.php:16 inc/hooks/homepage-service.php:21
+#: inc/hooks/homepage-service.php:26 inc/hooks/homepage-testimonial.php:15
+msgid ""
+"The set doesn't moved. Deep don't fru it fowl gathering heaven days moving "
+"creeping under from i air. Set it fifth Meat was darkness. every bring in it."
+msgstr ""
+
+#: inc/hooks/homepage-service.php:20
+msgid "STYLIES PHOTOGRAPY"
+msgstr ""
+
+#: inc/hooks/homepage-service.php:25
+msgid "CREATIVE AGENCY"
+msgstr ""
+
+#: inc/hooks/homepage-testimonial.php:14
+msgid "Sayer Name, CEO"
+msgstr ""
+
+#: inc/sidebar-widget-init.php:10
+msgid "Sidebar"
+msgstr ""
+
+#: inc/template-tags.php:28
+#, php-format
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:33
+#, php-format
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:52 inc/template-tags.php:58
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:71 template-parts/content-page.php:36
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: search.php:13
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:25 template-parts/content-single.php:30
+#: template-parts/content.php:29
+msgid "Pages:"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Bizlight"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://evisionthemes.com/themes/bizlight"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Bizlight theme is clean and elegant lightweight WordPress theme, adequate "
+"enough to create a standard site for any corporate house. Bizlight is "
+"basically designed for the normal WordPress users, in order to create a site "
+"quickly and efficiently. However, it has many competencies including "
+"responsive, bootstrap, HTML5, CSS3, retina ready, font awesome, google font, "
+"cross-browser compatibility, color control, layout control, logo upload, "
+"translation-ready, custom CSS field, etc. Documentation consists of several "
+"parts and shows you the entire process of setting up WordPress and Bizlight "
+"theme from scratch.Demo : http://demo.evisionthemes.com/bizlight-pro/ "
+"Documentation : http://themepalace.com/theme-instructions/bizlight-pro/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "evisiontheme"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://evisionthemes.com/"
+msgstr ""
