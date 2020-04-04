@@ -34,7 +34,7 @@
 				  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending">Date</th>
 				  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column descending">Statut</th>
 				 
-				  <th style="width: 10%">Supprimer</th>
+				  <th style="width: 10%">Quarantaine</th>
 				  
                 </tr>
                  </thead>
@@ -206,6 +206,7 @@ $getbutton = get_resultat_button($resultat);
 	<td><?php echo $voi;?></td>
 	<td><?php echo $cm;?></td>
 <td><?php echo "Vide Mnt";?></td>
+<td><?php echo $getbutton;?></td>
 <td><?php echo $getbutton;?></td>
 	</tr>
 

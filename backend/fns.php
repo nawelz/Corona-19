@@ -246,4 +246,10 @@ include "db.php";
   return $tout->rowCount();
 
   }
+  function mettre_en_quarantaine($id) {
+include "db.php";
+$thisd = date("Y")."-".date("m")."-".date("d"); 
+$req = "Update wp_db7_forms SET quarantaine = 'Oui' , date_quarantaine = '$thisd' where form_id = '$id'";
+  $tout = $db->query($req); 
+  }
 ?>
