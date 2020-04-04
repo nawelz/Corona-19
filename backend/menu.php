@@ -10,8 +10,8 @@
         </li>
       
            
-        <li class="treeview <?php echo $tag_site_ref; ?>">
-          <a href="alltestes2.php">
+        <li>
+          <a href="alltestes.php">
             <i class="fa fa-pie-chart"></i>
             <span>Tous les Testes</span>
             
@@ -60,17 +60,14 @@
           </a>
         
         </li>
-         <li class="treeview">
-    
+        
+
+        <li>
           <a href="statreel.php">
-            <i class="fa fa-table"></i> <span>Statistiques Réel</span>
+            <i class="fa fa-dashboard"></i> <span>Statistiques Réel</span>
             <span class="pull-right-container">
-      
-           
-       
             </span>
           </a>
-        
         </li>
         </ul>
    
