@@ -1,0 +1,6 @@
+select.form-control.selectform {
+    width: 10% !important;
+}
+input.form-control.textform {
+    width: 90% !important;
+}
