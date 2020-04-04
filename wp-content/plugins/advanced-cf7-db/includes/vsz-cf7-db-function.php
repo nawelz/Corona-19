@@ -163,7 +163,7 @@ function vsz_cf7_get_the_form_list($fid = ''){
 	foreach ($forms as $k => $v){
 		//Check if form id not empty then get specific form related information
 		if(!empty($fid)){
-			if($v->id() === $fid){
+			if($v->id() == $fid){
 				$form[] = $v;
 				return $form;
 			}
@@ -172,9 +172,12 @@ function vsz_cf7_get_the_form_list($fid = ''){
 			$form[] = $v;
 		}
     }
-    // New function Added to sort the array by CF7 Name
-    usort($form, "cmp_sort_form_name");
-
+	
+	if(count($form)>1){
+		// New function Added to sort the array by CF7 Name
+		usort($form, "cmp_sort_form_name");
+	}
+	
 	return $form;
 }//Close function
 /*
@@ -436,4 +439,25 @@ function vsz_field_type_info($fid){
 	}
 
 	return $arr_field_type;
+}
+
+/**
+ * Get highlighted code
+ *
+ * @param $code
+ * @return highlighted code
+ */
+
+if(!function_exists("get_highlighted_code")){
+	function get_highlighted_code($code) {
+		// Including library
+		require_once(plugin_dir_path(__FILE__)."geshi.php");
+		
+		// Creating object
+		$geshi = new GeSHi($code,'PHP');
+		$geshi->enable_classes();
+		
+		// Getting parsed code
+		return $geshi->parse_code();
+	}
 }

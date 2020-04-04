@@ -381,9 +381,12 @@ class PHPExcel_Worksheet_AutoFilter_Column
 				//	The columns array of PHPExcel_Worksheet_AutoFilter objects
 				$this->$key = array();
 				foreach ($value as $k => $v) {
-					$this->$key[$k] = clone $v;
+					$temp_key = $this->$key;
+					$temp_key[$k] = clone $v;
+					$temp_key[$k]->setParent($this);
+					$this->$key = $temp_key;
 					// attach the new cloned Rule to this new cloned Autofilter Cloned object
-					$this->$key[$k]->setParent($this);
+					// $this->$key[$k]->setParent($this);
 				}
 			} else {
 				$this->$key = $value;

@@ -47,7 +47,7 @@ class PHPExcel_Calculation_Database {
 
 
 	/**
-	 * __fieldExtract
+	 * _fieldExtract
 	 *
 	 * Extracts the column ID to use for the data field.
 	 *
@@ -64,7 +64,7 @@ class PHPExcel_Calculation_Database {
 	 * @return	string|NULL
 	 *
 	 */
-	private static function __fieldExtract($database,$field) {
+	private static function _fieldExtract($database,$field) {
 		$field = strtoupper(PHPExcel_Calculation_Functions::flattenSingleValue($field));
 		$fieldNames = array_map('strtoupper',array_shift($database));
 
@@ -77,7 +77,7 @@ class PHPExcel_Calculation_Database {
 	}
 
 	/**
-	 * __filter
+	 * _filter
 	 *
 	 * Parses the selection criteria, extracts the database rows that match those criteria, and
 	 * returns that subset of rows.
@@ -95,7 +95,7 @@ class PHPExcel_Calculation_Database {
 	 * @return	array of mixed
 	 *
 	 */
-	private static function __filter($database,$criteria) {
+	private static function _filter($database,$criteria) {
 		$fieldNames = array_shift($database);
 		$criteriaNames = array_shift($criteria);
 
@@ -178,12 +178,12 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DAVERAGE($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -230,13 +230,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DCOUNT($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -279,13 +279,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DCOUNTA($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -326,13 +326,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DGET($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -377,13 +377,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DMAX($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -424,13 +424,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DMIN($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -470,13 +470,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DPRODUCT($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -517,13 +517,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DSTDEV($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -564,13 +564,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DSTDEVP($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -610,13 +610,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DSUM($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -657,13 +657,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DVAR($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
@@ -704,13 +704,13 @@ class PHPExcel_Calculation_Database {
 	 *
 	 */
 	public static function DVARP($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
+		$field = self::_fieldExtract($database,$field);
 		if (is_null($field)) {
 			return NULL;
 		}
 
 		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
+		$database = self::_filter($database,$criteria);
 		//	extract an array of values for the requested column
 		$colData = array();
 		foreach($database as $row) {
