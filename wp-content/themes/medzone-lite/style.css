@@ -10,3 +10,92 @@ Text Domain: medzone-lite
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
+
+
+
+.button-test {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+ border-radius: 35px;
+ height: 50px !important;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+position: relative;
+
+top: 10px !important;
+}
+
+.button-test span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-test span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-test:hover span {
+  padding-right: 25px;
+}
+
+
+.button-declaration {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+ border-radius: 35px;
+ height: 50px !important;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+position: relative;
+left: 10% !important;
+top: 10px !important;
+}
+
+.button-declaration span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-declaration span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-declaration:hover span {
+  padding-right: 25px;
+}
+
+.button-declaration:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button-test:hover span:after {
+  opacity: 1;
+  right: 0;
+}
