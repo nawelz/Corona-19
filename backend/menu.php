@@ -14,7 +14,6 @@
           <a href="alltestes.php">
             <i class="fa fa-pie-chart"></i>
             <span>Tous les Testes</span>
-            
           </a>
           
         </li>
@@ -27,8 +26,8 @@
           </a>
           
         </li>
-       <li class="treeview <?php echo $tag_config; ?>">
-          <a href="#">
+       <li>
+          <a href="allgrave.php">
             <i class="fa fa-table"></i> <span>Testes Graves</span>
     
           </a>
