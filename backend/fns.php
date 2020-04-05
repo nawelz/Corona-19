@@ -260,7 +260,7 @@ function get_stat_now_mort($cond) {
  $resultat["TresGraveP"] = 0;
   $resultat["Total"] = 0;
  //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
-  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date and mort = 'Oui'"); 
+  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date and mort = 'Oui' and form_post_id = '6'"); 
 while ($data2 = $tout->fetch()) {
   $tab = array();
 
@@ -428,7 +428,7 @@ return $resultat;
 
   function get_nbr_test($cond) {
 include "db.php";
-  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date like ('$cond')"); 
+  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date like ('$cond') and form_post_id = '6'"); 
   return $tout->rowCount();
 
   }
@@ -465,6 +465,15 @@ echo $req;
   $tout = $db->query($req); 
   }
 
+  function arreter($id) {
+include "db.php";
+
+$thisd = date("Y")."-".date("m")."-".date("d"); 
+$req = "Update wp_db7_forms SET trouve = 'Oui' where form_id = '$id'";
+echo $req;
+  $tout = $db->query($req); 
+  }
+
 
 
 
@@ -478,7 +487,7 @@ echo $req;
  $resultat["FemininP"] = 0;
   $resultat["Total"] = 0;
  //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
-  $tout = $db->query("SELECT * FROM wp_db7_forms where mort = '' $cond"); 
+  $tout = $db->query("SELECT * FROM wp_db7_forms where mort = '' and form_post_id = '6' $cond"); 
 while ($data2 = $tout->fetch()) {
   $tab = array();
 
@@ -558,7 +567,7 @@ return $resultat;
  $resultat["VieP"] = 0;
   $resultat["Total"] = 0;
  //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
-  $tout = $db->query("SELECT * FROM wp_db7_forms $cond"); 
+  $tout = $db->query("SELECT * FROM wp_db7_forms  where form_post_id = '6' $cond"); 
 while ($data2 = $tout->fetch()) {
  if ($data2["mort"] == "Oui")
  {
@@ -577,6 +586,33 @@ return $resultat;
   
   }
 
+   function get_stat_declaration($cond) {
+  include "db.php";
+ $resultat = array();
+ $resultat["Mort"] = 0;
+ $resultat["MortP"] = 0;
+ $resultat["Vie"] = 0;
+ $resultat["VieP"] = 0;
+  $resultat["Total"] = 0;
+ //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
+  $tout = $db->query("SELECT * FROM wp_db7_forms  where form_post_id = '169' $cond"); 
+while ($data2 = $tout->fetch()) {
+ if ($data2["trouve"] == "Oui")
+ {
+  $resultat["Mort"]++;
+ }
+ else
+ {
+  $resultat["Vie"]++;
+ }
+
+}
+$resultat["Total"] = $resultat["Mort"]+$resultat["Vie"];
+$resultat["MortP"] = ($resultat["Mort"] / $resultat["Total"]) * 100;
+$resultat["VieP"] = ($resultat["Vie"] / $resultat["Total"]) * 100;
+return $resultat;
+  
+  }
 
 
    function get_stat_qtn($cond) {
@@ -588,7 +624,7 @@ return $resultat;
  $resultat["NONP"] = 0;
   $resultat["Total"] = 0;
  //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
-  $tout = $db->query("SELECT * FROM wp_db7_forms where mort = '' and quarantaine = 'Oui' $cond"); 
+  $tout = $db->query("SELECT * FROM wp_db7_forms where mort = '' and form_post_id = '6' and quarantaine = 'Oui' $cond"); 
 while ($data2 = $tout->fetch()) {
  if (diff_day($data2["date_quarantaine"]) > 15)
  {
@@ -616,7 +652,7 @@ return $resultat;
  $resultat["FemininP"] = 0;
   $resultat["Total"] = 0;
  //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
-  $tout = $db->query("SELECT * FROM wp_db7_forms where mort = 'Oui' $cond"); 
+  $tout = $db->query("SELECT * FROM wp_db7_forms where mort = 'Oui' and form_post_id = '6' $cond"); 
 while ($data2 = $tout->fetch()) {
   $tab = array();
 
@@ -683,4 +719,84 @@ $resultat["FemininP"] = ($resultat["Feminin"] / $resultat["Total"]) * 100;
 return $resultat;
   
   }
+
+
+
+  function get_stat_declarer_genre($cond) {
+  include "db.php";
+ $resultat = array();
+ $resultat["Masculain"] = 0;
+ $resultat["MasculainP"] = 0;
+ $resultat["Feminin"] = 0;
+ $resultat["FemininP"] = 0;
+  $resultat["Total"] = 0;
+ //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
+  $tout = $db->query("SELECT * FROM wp_db7_forms where form_post_id = '169' $cond"); 
+while ($data2 = $tout->fetch()) {
+  $tab = array();
+
+  $form_data = unserialize($data2["form_value"]);
+  foreach ($form_data as $key => $data){
+
+                            $matches = array();
+
+                            if ( $key == 'cfdb7_status' )  continue;
+                      
+                            if( ! empty($matches[0]) ) continue;
+
+                                     if ( is_array($data) ) {
+
+                                    $key_val = str_replace('your-', '', $key);
+                                    $key_val = ucfirst( $key_val );
+                                    $arr_str_data =  implode(', ',$data);
+                                  
+             
+                      if (trim($key_val) == "Genre")
+                         
+                             if ($data[0] == "Masculain")
+                        {
+                          $resultat["Masculain"]++;
+                        }
+                        else
+                        {
+                          $resultat["Feminin"]++;
+                        }
+                    
+                     
+                                }else{
+
+                                    $key_val = str_replace('your-', '', $key);
+                                    $key_val = ucfirst( $key_val );
+                              
+                                    //echo '<p><b>'.$key_val.'</b>: '.nl2br($data).'</p>';
+                     
+                        if (trim($key_val) == "Genre")
+                         
+                             if ($data[0] == "Masculain")
+                        {
+                          $resultat["Masculain"]++;
+                        }
+                        else
+                        {
+                          $resultat["Feminin"]++;
+                        }
+
+                     
+                    
+                         
+                     //  - - - - - - 
+
+                       }
+
+                   
+}
+
+}
+$resultat["Total"] = $resultat["Masculain"]+$resultat["Feminin"];
+$resultat["MasculainP"] = ($resultat["Masculain"] / $resultat["Total"]) * 100;
+$resultat["FemininP"] = ($resultat["Feminin"] / $resultat["Total"]) * 100;
+return $resultat;
+  
+  }
+
 ?>

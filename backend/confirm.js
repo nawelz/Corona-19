@@ -28,6 +28,28 @@ else
 	}
 }
 
+function arreter(name,id,message)
+{
+
+if (confirm('Êtes vous sure de arreter le  patient '+message))
+{
+	var namefile = 'http://localhost/Corona-19/backend/arreter.php?id='+id;
+	// Création d'une requête HTTP
+var req = new XMLHttpRequest();
+// Requête HTTP GET synchrone vers le fichier langages.txt publié localement
+req.open("GET", namefile, false);
+// Envoi de la requête
+req.send(null);
+sleep(1);
+alert(message+' est arrété avec succée');
+location.reload();
+}
+else
+{
+	return false;
+	}
+}
+
 function sortiedehopital(name,id,message)
 {
 

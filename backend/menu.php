@@ -70,5 +70,12 @@
             </span>
           </a>
         </li>
+         <li>
+          <a href="allfuites.php">
+            <i class="fa fa-pie-chart"></i>
+            <span>Déclaration Fuite</span>
+          </a>
+          
+        </li>
         </ul>
    
