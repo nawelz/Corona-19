@@ -13,37 +13,17 @@ if ( get_theme_mod( 'medzone_lite_enable_copyright', true ) || has_nav_menu( 'co
 		<div class="container">
 			<div class="row">
 				<?php if ( get_theme_mod( 'medzone_lite_enable_copyright', true ) ) : ?>
-					<div id="footer-bottom-widget-area-1" class="col-sm-6">
-						<?php
-						// Translators: %s is a link.
-						echo wp_kses_post(
-							get_theme_mod(
-								'medzone_lite_copyright_contents',
-								sprintf(
-									esc_html__( 'MedZone Lite by %1$sMacho Themes%2$s &copy; %3$s. All rights reserved.', 'medzone-lite' ),
-									'<a href="https://www.machothemes.com" target="_blank">',
-									'</a>',
-									date( 'Y' )
-								)
-							)
-						);
-						?>
+					<div id="footer-bottom-widget-area-1" class="col-sm-12">
+						<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>HACK4</b>CORONA
+    </div>
+    <strong>Copyright © 2020 <a href="https://www.ziedmaaloul.site/" target="_blank">Zied Maaloul &amp; Heni Zribi </a>.</strong> Tous les droits&nbsp;réservé.
+  </footer>
 					</div><!-- end .col -->
 				<?php endif; ?>
 
-				<div id="footer-bottom-widget-area-2" class="col-sm-6">
-					<?php
-					wp_nav_menu(
-						array(
-							'menu'           => 'footer',
-							'theme_location' => 'footer',
-							'depth'          => 1,
-							'container'      => 'div',
-							'menu_class'     => 'footer-copyright-menu text-right',
-						)
-					);
-					?>
-				</div><!-- end .col -->
+				
 			</div><!-- end .row -->
 		</div><!-- end .container -->
 		<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
