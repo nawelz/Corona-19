@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : Dim 05 avr. 2020 à 14:04
+-- Hôte : localhost
+-- Généré le : Dim 05 avr. 2020 à 14:37
 -- Version du serveur :  10.4.11-MariaDB
--- Version de PHP : 7.4.4
+-- Version de PHP : 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -155,18 +156,19 @@ CREATE TABLE `wp_db7_forms` (
   `hopital` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hopitalT` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date_en_hopital` date NOT NULL,
-  `date_sortie_hopital` date NOT NULL
+  `date_sortie_hopital` date NOT NULL,
+  `hopitalisation` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `wp_db7_forms`
 --
 
-INSERT INTO `wp_db7_forms` (`form_id`, `form_post_id`, `form_value`, `form_date`, `date_quarantaine`, `quarantaine`, `mort`, `date_mort`, `hopital`, `hopitalT`, `date_en_hopital`, `date_sortie_hopital`) VALUES
-(3, 6, 'a:22:{s:12:\"cfdb7_status\";s:6:\"unread\";s:7:\"id:name\";s:7:\"my name\";s:6:\"id:tel\";s:4:\"hhhh\";s:8:\"id:email\";s:12:\"med@test.ext\";s:11:\"remperature\";a:1:{i:0;s:3:\"Oui\";}s:12:\"respiratoire\";a:1:{i:0;s:3:\"Non\";}s:7:\"dairrhe\";a:1:{i:0;s:3:\"Oui\";}s:4:\"tete\";a:1:{i:0;s:3:\"Non\";}s:5:\"gorge\";a:1:{i:0;s:3:\"Oui\";}s:4:\"toux\";a:1:{i:0;s:3:\"Non\";}s:7:\"fatigue\";a:1:{i:0;s:3:\"Oui\";}s:6:\"voyage\";a:1:{i:0;s:3:\"Non\";}s:7:\"contact\";a:1:{i:0;s:3:\"Oui\";}s:13:\"contactcorona\";a:1:{i:0;s:3:\"Non\";}s:9:\"naissance\";s:10:\"2017-03-17\";s:5:\"genre\";a:1:{i:0;s:8:\"Masculin\";}s:8:\"id:poids\";s:3:\"100\";s:9:\"id:taille\";s:3:\"100\";s:5:\"ville\";s:6:\"Ariana\";s:8:\"enceinte\";a:1:{i:0;s:3:\"Oui\";}s:10:\"courbature\";a:1:{i:0;s:3:\"Non\";}s:7:\"id:sugg\";s:0:\"\";}', '2020-04-05 00:49:02', '2010-04-10', 'Oui', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00'),
-(4, 6, 'a:22:{s:12:\"cfdb7_status\";s:6:\"unread\";s:7:\"id:name\";s:7:\"my name\";s:6:\"id:tel\";s:4:\"hhhh\";s:8:\"id:email\";s:12:\"med@test.ext\";s:11:\"remperature\";a:1:{i:0;s:3:\"Oui\";}s:12:\"respiratoire\";a:1:{i:0;s:3:\"Non\";}s:7:\"dairrhe\";a:1:{i:0;s:3:\"Non\";}s:4:\"tete\";a:1:{i:0;s:3:\"Non\";}s:5:\"gorge\";a:1:{i:0;s:3:\"Oui\";}s:4:\"toux\";a:1:{i:0;s:3:\"Non\";}s:7:\"fatigue\";a:1:{i:0;s:3:\"Non\";}s:6:\"voyage\";a:1:{i:0;s:3:\"Non\";}s:7:\"contact\";a:1:{i:0;s:3:\"Oui\";}s:13:\"contactcorona\";a:1:{i:0;s:3:\"Non\";}s:9:\"naissance\";s:10:\"1991-03-17\";s:5:\"genre\";a:1:{i:0;s:8:\"Féminin\";}s:8:\"id:poids\";s:3:\"100\";s:9:\"id:taille\";s:3:\"100\";s:5:\"ville\";s:6:\"Ariana\";s:8:\"enceinte\";a:1:{i:0;s:3:\"Oui\";}s:10:\"courbature\";a:1:{i:0;s:3:\"Non\";}s:7:\"id:sugg\";s:0:\"\";}', '2020-04-05 00:51:45', '2020-04-05', 'Oui', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00'),
-(5, 6, 'a:22:{s:12:\"cfdb7_status\";s:6:\"unread\";s:7:\"id:name\";s:10:\"POPOAOAOOA\";s:6:\"id:tel\";s:8:\"29309471\";s:8:\"id:email\";s:12:\"med@test.ext\";s:11:\"remperature\";a:1:{i:0;s:3:\"Oui\";}s:12:\"respiratoire\";a:1:{i:0;s:3:\"Oui\";}s:7:\"dairrhe\";a:1:{i:0;s:3:\"Oui\";}s:4:\"tete\";a:1:{i:0;s:3:\"Oui\";}s:5:\"gorge\";a:1:{i:0;s:3:\"Oui\";}s:4:\"toux\";a:1:{i:0;s:3:\"Non\";}s:7:\"fatigue\";a:1:{i:0;s:3:\"Oui\";}s:6:\"voyage\";a:1:{i:0;s:3:\"Non\";}s:7:\"contact\";a:1:{i:0;s:3:\"Oui\";}s:13:\"contactcorona\";a:1:{i:0;s:3:\"Non\";}s:9:\"naissance\";s:10:\"1991-03-17\";s:5:\"genre\";a:1:{i:0;s:8:\"Féminin\";}s:8:\"id:poids\";s:3:\"100\";s:9:\"id:taille\";s:3:\"100\";s:5:\"ville\";s:4:\"Sfax\";s:8:\"enceinte\";a:1:{i:0;s:3:\"Oui\";}s:10:\"courbature\";a:1:{i:0;s:3:\"Non\";}s:7:\"id:sugg\";s:0:\"\";}', '2020-04-05 00:52:16', '2020-04-05', 'Oui', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00'),
-(6, 6, 'a:22:{s:12:\"cfdb7_status\";s:6:\"unread\";s:7:\"id:name\";s:10:\"POPOAOAOOA\";s:6:\"id:tel\";s:8:\"29309471\";s:8:\"id:email\";s:12:\"med@test.ext\";s:11:\"remperature\";a:1:{i:0;s:3:\"Non\";}s:12:\"respiratoire\";a:1:{i:0;s:3:\"Non\";}s:7:\"dairrhe\";a:1:{i:0;s:3:\"Non\";}s:4:\"tete\";a:1:{i:0;s:3:\"Non\";}s:5:\"gorge\";a:1:{i:0;s:3:\"Non\";}s:4:\"toux\";a:1:{i:0;s:3:\"Non\";}s:7:\"fatigue\";a:1:{i:0;s:3:\"Non\";}s:6:\"voyage\";a:1:{i:0;s:3:\"Non\";}s:7:\"contact\";a:1:{i:0;s:3:\"Oui\";}s:13:\"contactcorona\";a:1:{i:0;s:3:\"Non\";}s:9:\"naissance\";s:10:\"1991-03-17\";s:5:\"genre\";a:1:{i:0;s:8:\"Féminin\";}s:8:\"id:poids\";s:3:\"100\";s:9:\"id:taille\";s:3:\"100\";s:5:\"ville\";s:4:\"Sfax\";s:8:\"enceinte\";a:1:{i:0;s:3:\"Oui\";}s:10:\"courbature\";a:1:{i:0;s:3:\"Non\";}s:7:\"id:sugg\";s:0:\"\";}', '2020-04-05 00:52:32', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00');
+INSERT INTO `wp_db7_forms` (`form_id`, `form_post_id`, `form_value`, `form_date`, `date_quarantaine`, `quarantaine`, `mort`, `date_mort`, `hopital`, `hopitalT`, `date_en_hopital`, `date_sortie_hopital`, `hopitalisation`) VALUES
+(3, 6, 'a:22:{s:12:\"cfdb7_status\";s:6:\"unread\";s:7:\"id:name\";s:7:\"my name\";s:6:\"id:tel\";s:4:\"hhhh\";s:8:\"id:email\";s:12:\"med@test.ext\";s:11:\"remperature\";a:1:{i:0;s:3:\"Oui\";}s:12:\"respiratoire\";a:1:{i:0;s:3:\"Non\";}s:7:\"dairrhe\";a:1:{i:0;s:3:\"Oui\";}s:4:\"tete\";a:1:{i:0;s:3:\"Non\";}s:5:\"gorge\";a:1:{i:0;s:3:\"Oui\";}s:4:\"toux\";a:1:{i:0;s:3:\"Non\";}s:7:\"fatigue\";a:1:{i:0;s:3:\"Oui\";}s:6:\"voyage\";a:1:{i:0;s:3:\"Non\";}s:7:\"contact\";a:1:{i:0;s:3:\"Oui\";}s:13:\"contactcorona\";a:1:{i:0;s:3:\"Non\";}s:9:\"naissance\";s:10:\"2017-03-17\";s:5:\"genre\";a:1:{i:0;s:8:\"Masculin\";}s:8:\"id:poids\";s:3:\"100\";s:9:\"id:taille\";s:3:\"100\";s:5:\"ville\";s:6:\"Ariana\";s:8:\"enceinte\";a:1:{i:0;s:3:\"Oui\";}s:10:\"courbature\";a:1:{i:0;s:3:\"Non\";}s:7:\"id:sugg\";s:0:\"\";}', '2020-04-05 00:49:02', '2010-04-10', 'Oui', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00', ''),
+(4, 6, 'a:22:{s:12:\"cfdb7_status\";s:6:\"unread\";s:7:\"id:name\";s:7:\"my name\";s:6:\"id:tel\";s:4:\"hhhh\";s:8:\"id:email\";s:12:\"med@test.ext\";s:11:\"remperature\";a:1:{i:0;s:3:\"Oui\";}s:12:\"respiratoire\";a:1:{i:0;s:3:\"Non\";}s:7:\"dairrhe\";a:1:{i:0;s:3:\"Non\";}s:4:\"tete\";a:1:{i:0;s:3:\"Non\";}s:5:\"gorge\";a:1:{i:0;s:3:\"Oui\";}s:4:\"toux\";a:1:{i:0;s:3:\"Non\";}s:7:\"fatigue\";a:1:{i:0;s:3:\"Non\";}s:6:\"voyage\";a:1:{i:0;s:3:\"Non\";}s:7:\"contact\";a:1:{i:0;s:3:\"Oui\";}s:13:\"contactcorona\";a:1:{i:0;s:3:\"Non\";}s:9:\"naissance\";s:10:\"1991-03-17\";s:5:\"genre\";a:1:{i:0;s:8:\"Féminin\";}s:8:\"id:poids\";s:3:\"100\";s:9:\"id:taille\";s:3:\"100\";s:5:\"ville\";s:6:\"Ariana\";s:8:\"enceinte\";a:1:{i:0;s:3:\"Oui\";}s:10:\"courbature\";a:1:{i:0;s:3:\"Non\";}s:7:\"id:sugg\";s:0:\"\";}', '2020-04-05 00:51:45', '2020-04-05', 'Oui', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00', ''),
+(5, 6, 'a:22:{s:12:\"cfdb7_status\";s:6:\"unread\";s:7:\"id:name\";s:10:\"POPOAOAOOA\";s:6:\"id:tel\";s:8:\"29309471\";s:8:\"id:email\";s:12:\"med@test.ext\";s:11:\"remperature\";a:1:{i:0;s:3:\"Oui\";}s:12:\"respiratoire\";a:1:{i:0;s:3:\"Oui\";}s:7:\"dairrhe\";a:1:{i:0;s:3:\"Oui\";}s:4:\"tete\";a:1:{i:0;s:3:\"Oui\";}s:5:\"gorge\";a:1:{i:0;s:3:\"Oui\";}s:4:\"toux\";a:1:{i:0;s:3:\"Non\";}s:7:\"fatigue\";a:1:{i:0;s:3:\"Oui\";}s:6:\"voyage\";a:1:{i:0;s:3:\"Non\";}s:7:\"contact\";a:1:{i:0;s:3:\"Oui\";}s:13:\"contactcorona\";a:1:{i:0;s:3:\"Non\";}s:9:\"naissance\";s:10:\"1991-03-17\";s:5:\"genre\";a:1:{i:0;s:8:\"Féminin\";}s:8:\"id:poids\";s:3:\"100\";s:9:\"id:taille\";s:3:\"100\";s:5:\"ville\";s:4:\"Sfax\";s:8:\"enceinte\";a:1:{i:0;s:3:\"Oui\";}s:10:\"courbature\";a:1:{i:0;s:3:\"Non\";}s:7:\"id:sugg\";s:0:\"\";}', '2020-04-05 00:52:16', '2020-04-05', 'Oui', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00', ''),
+(6, 6, 'a:22:{s:12:\"cfdb7_status\";s:6:\"unread\";s:7:\"id:name\";s:10:\"POPOAOAOOA\";s:6:\"id:tel\";s:8:\"29309471\";s:8:\"id:email\";s:12:\"med@test.ext\";s:11:\"remperature\";a:1:{i:0;s:3:\"Non\";}s:12:\"respiratoire\";a:1:{i:0;s:3:\"Non\";}s:7:\"dairrhe\";a:1:{i:0;s:3:\"Non\";}s:4:\"tete\";a:1:{i:0;s:3:\"Non\";}s:5:\"gorge\";a:1:{i:0;s:3:\"Non\";}s:4:\"toux\";a:1:{i:0;s:3:\"Non\";}s:7:\"fatigue\";a:1:{i:0;s:3:\"Non\";}s:6:\"voyage\";a:1:{i:0;s:3:\"Non\";}s:7:\"contact\";a:1:{i:0;s:3:\"Oui\";}s:13:\"contactcorona\";a:1:{i:0;s:3:\"Non\";}s:9:\"naissance\";s:10:\"1991-03-17\";s:5:\"genre\";a:1:{i:0;s:8:\"Féminin\";}s:8:\"id:poids\";s:3:\"100\";s:9:\"id:taille\";s:3:\"100\";s:5:\"ville\";s:4:\"Sfax\";s:8:\"enceinte\";a:1:{i:0;s:3:\"Oui\";}s:10:\"courbature\";a:1:{i:0;s:3:\"Non\";}s:7:\"id:sugg\";s:0:\"\";}', '2020-04-05 00:52:32', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
