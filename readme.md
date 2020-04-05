@@ -1,9 +1,4 @@
 # Site internet ( http://covid.ziedmaaloul.site/Corona-19 )
-
-# User : admin
-
-# Pwd : admin
-
 # Réalisé par : Mohamed Zied Maaloul et Heni Zribi
 
 Le concept :
@@ -60,11 +55,3 @@ Statistiques
 
 Des captures d’écran pour le backend :
 Lien : [http://covid.ziedmaaloul.site/Corona-19/backend](http://covid.ziedmaaloul.site/Corona-19/backend)
-User : ziedev
-Pwd : ziedev
-
-
-Lien vers code source :
-https://github.com/heni92/Corona-
-
-
