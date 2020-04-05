@@ -127,7 +127,7 @@ if (($nomi != "/voirancre.php") && ($nomi != "/commenter.php"))
     <!-- Logo -->
     <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>S</b>EO</span>
+      <span class="logo-mini"><b>COVID</b></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b><?php echo $nom_site; ?></b>Board</span>
     </a>
