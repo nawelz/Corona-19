@@ -260,4 +260,29 @@ $req = "Update wp_db7_forms SET quarantaine = 'Oui' , date_quarantaine = '$thisd
 echo $req;
   $tout = $db->query($req); 
   }
+
+    function mettre_a_hopital($id) {
+include "db.php";
+$thisd = date("Y")."-".date("m")."-".date("d"); 
+$req = "Update wp_db7_forms SET hopitalisation = 'Oui' , hopital = 'Oui' , date_en_hopital = '$thisd' where form_id = '$id'";
+echo $req;
+  $tout = $db->query($req); 
+  }
+
+
+    function sortie_de_hopital($id) {
+include "db.php";
+$thisd = date("Y")."-".date("m")."-".date("d"); 
+$req = "Update wp_db7_forms SET hopitalisation = '' , hopitalT = 'Oui' , date_sortie_hopital = '$thisd' where form_id = '$id'";
+echo $req;
+  $tout = $db->query($req); 
+  }
+     function mortlepatient($id) {
+include "db.php";
+
+$thisd = date("Y")."-".date("m")."-".date("d"); 
+$req = "Update wp_db7_forms SET mort = 'Oui' , date_mort = '$thisd' where form_id = '$id'";
+echo $req;
+  $tout = $db->query($req); 
+  }
 ?>

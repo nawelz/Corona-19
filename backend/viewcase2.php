@@ -162,6 +162,7 @@ $data2 = $tout->fetch();
 
 		<?php
 $date_add = $data2["form_date"];
+$id = $data2["form_id"];
 		if ($tab["Enceinte"][0] == "Oui") {$Enceinte = '<span class="label label-danger">Oui</span>';}
 		else {$Enceinte = '<span class="label label-success">Non</span>';}
 		if ($tab["toux"][0] == "Oui") {$toux = '<span class="label label-danger">Oui</span>';}
@@ -220,8 +221,38 @@ $getbutton = get_resultat_button($resultat);
                   <b>Taille</b> <a class="pull-right"><?php echo $tab["taille"];?> Cm</a>
                 </li>
               </ul>
+              	<?php 
+              	$nme = $tab["name"];
+		 		
 
-              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+              	if ($data2["mort"] == "Oui")
+              	{
+              		?>
+              		<span class="label label-danger">Mort</span>
+              		<?php
+              	}
+              	else {
+              		if  ($data2["hopitalisation"] == "")
+              		{
+              			$mis = "mettreahopital('','".$id."','".$nme."')";
+              				?>
+              				 <a href="#" class="btn btn-primary btn-block mettre" onclick="<?php echo $mis; ?>"><b>Mettre dans l'hopital</b></a>
+              				 <?php
+
+              		}
+              		
+              		else {
+              			$mis = "sortiedehopital('','".$id."','".$nme."')";
+              			?>
+              				 <a href="#" class="btn btn-primary btn-block sortie" onclick="<?php echo $mis; ?>"><b>Sortie de  l'hopital</b></a>
+              				 <?php
+              		}
+              			$mis = "mortlepatient('','".$id."','".$nme."')";
+              			?>
+              				 <a href="#" class="btn btn-primary btn-block mort" onclick="<?php echo $mis; ?>"><b>Déclaré Mort</b></a>
+              				 <?php
+              	}
+             ?>
             </div>
             <!-- /.box-body -->
           </div>
@@ -283,7 +314,7 @@ else
         <div class="col-md-9">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">Activity</a></li>
+              <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">Symptômes</a></li>
               <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">Activité</a></li>
                 </ul>
             <div class="tab-content">
@@ -331,70 +362,194 @@ if ($tab["genre"] == "Féminin")
                 <ul class="timeline timeline-inverse">
                   <!-- timeline time label -->
                   <li class="time-label">
-                        <span class="bg-red">
-                          <?php substr($date_add,0,10);
-                          ?>
-                        </span>
+                       
                   </li>
                   <!-- /.timeline-label -->
                   <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-envelope bg-blue"></i>
+              
 
+                 <!-- timeline item -->
+               <?php 
+               if ($data2["mort"] == "Oui")
+               {
+
+               	?>
+               		 <li>
                     <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                  
 
-                      <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-                      <div class="timeline-body">
-                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                        quora plaxo ideeli hulu weebly balihoo...
-                      </div>
-                      <div class="timeline-footer">
-                        <a class="btn btn-primary btn-xs">Read more</a>
-                        <a class="btn btn-danger btn-xs">Delete</a>
-                      </div>
-                    </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-aqua"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-
-                      <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
+                      <h3 class="timeline-header no-border"><a href="#">Le Patient</a>est décédé 
                       </h3>
                     </div>
                   </li>
                   <!-- END timeline item -->
                   <!-- timeline item -->
+                   <li class="time-label">
+                        <span class="bg-green">
+                         <?php echo substr($data2["date_mort"],0,10);
+                         ?>
+                        </span>
+                  </li>
+                  <?php
+                   }
+                   	?>   
+
+
+
+
+                   	 <?php 
+               if ($data2["hopitalT"] == "Oui")
+               {
+
+               	?>
+               		 <li>
+                    <div class="timeline-item">
+                  
+
+                      <h3 class="timeline-header no-border"><a href="#">Le Patient</a>a finie son traitement a l'hopital
+                      </h3>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                   <li class="time-label">
+                        <span class="bg-green">
+                         <?php echo substr($data2["date_sortie_hopital"],0,10);
+                         ?>
+                        </span>
+                  </li>
+                  <?php
+                   }
+                   	?>   
+
+
+
+                   	 <?php 
+               if ($data2["hopital"] == "Oui")
+               {
+
+               	?>
+               		 <li>
+                    <div class="timeline-item">
+                  
+
+                      <h3 class="timeline-header no-border"><a href="#">Le Patient</a>a commencé son traitement a l'hopital
+                      </h3>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                   <li class="time-label">
+                        <span class="bg-green">
+                         <?php echo substr($data2["date_en_hopital"],0,10);
+                         ?>
+                        </span>
+                  </li>
+                  <?php
+                   }
+                   	?>   
+
+
+
+
+               <?php 
+               if (diff_day($data2["date_quarantaine"])> 15)
+               {
+
+               	?>
+					 <li>	
+                    <div class="timeline-item">
+                  
+
+                      <h3 class="timeline-header no-border"><a href="#">Le Patient</a>a Terminé son quarantaine
+                      </h3>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                   <li class="time-label">
+                        <span class="bg-green">
+
+                         <?php 
+                         	echo date($data2["date_quarantaine"], strtotime('+15 days')); 
+                                                 ?>
+                        </span>
+                  </li>
+                  <?php
+                   } else 
+                   {
+
+               	?>
+					 <li>	
+                    <div class="timeline-item">
+                  
+
+                      <h3 class="timeline-header no-border"><a href="#">Rest dans son quarantaine</a>
+                        <?php 
+$reste =  15 - diff_day($data2["date_quarantaine"]); 
+                        echo $reste; ?> Jours </h3>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                   <li class="time-label">
+                        <span class="bg-green">
+
+                         <?php 
+                         	echo date('Y-m-d'); 
+                                                 ?>
+                        </span>
+                  </li>
+                  <?php
+                   }
+                   	?>
+
+
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+               <?php 
+               if ($data2["quarantaine"] == "Oui")
+               {
+
+               	?>
+
+                    <div class="timeline-item">
+                  
+
+                      <h3 class="timeline-header no-border"><a href="#">Le Patient</a>a commencé son quarantaine
+                      </h3>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                   <li class="time-label">
+                        <span class="bg-green">
+                         <?php echo substr($data2["date_quarantaine"],0,10);
+                         ?>
+                        </span>
+                  </li>
+                  <?php
+                   }
+                   	?>
                   <li>
                     <i class="fa fa-comments bg-yellow"></i>
 
                     <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
+                   
 
-                      <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+                      <h3 class="timeline-header"><a href="#">Le Patient</a>a fait le test en ligne</h3>
 
                       <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
+                        Resultat  : <?php echo $getbutton; ?>
                       </div>
-                      <div class="timeline-footer">
-                        <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                      </div>
-                    </div>
+                     </div>
                   </li>
                   <!-- END timeline item -->
                   <!-- timeline time label -->
                   <li class="time-label">
                         <span class="bg-green">
-                         <?php $date_add;
+                         <?php echo substr($date_add,0,10);
                          ?>
                         </span>
                   </li>
