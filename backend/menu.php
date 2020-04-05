@@ -33,19 +33,8 @@
           </a>
          
         </li>
-        <li class="treeview <?php echo $tag_config; ?>">
-          <a href="#">
-            <i class="fa fa-table"></i> <span>Historique</span>
-    
-          </a>
-        </li>
-          <li class="treeview">
-          <a href="histoirreel.php">
-            <i class="fa fa-table"></i> <span>Historique Réel</span>
-    
-          </a>
-        </li>
-
+        
+         
 	  <li>
           <a href="allmorts.php">
             <i class="fa fa-dashboard"></i> <span>Tous les morts</span>
@@ -55,7 +44,7 @@
         </li>
 		
 		   <li>
-          <a href="hspitalisation.php">
+          <a href="hospitalisation.php">
             <i class="fa fa-dashboard"></i> <span>Hospitalisation</span>
             <span class="pull-right-container">
             </span>

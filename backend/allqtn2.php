@@ -205,7 +205,7 @@ $getbutton = get_resultat_button($resultat);
 	<td><?php echo $respe;?></td>
 	<td><?php echo $voi;?></td>
 	<td><?php echo $cm;?></td>
-<td><?php echo "Vide Mnt";?></td>
+<td><?php echo substr($data2["form_date"],0,10);?></td>
 <td><?php echo $getbutton;?></td>
 
 <td>
