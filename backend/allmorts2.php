@@ -383,7 +383,7 @@ $getbutton = get_resultat_button($resultat);
 
 
              <?php 
-                $now = "Where date_mort like ('".date("Y")."-".date("m")."-".date("d")."%"."')";
+                $now = "and date_mort like ('".date("Y")."-".date("m")."-".date("d")."%"."')";
                 $resultat = get_stat_vie($now); 
                              ?>
 
@@ -436,7 +436,7 @@ $getbutton = get_resultat_button($resultat);
 
 
              <?php 
-                 $now = "Where date_mort like ('"."_____".date("m")."%')";
+                 $now = "and date_mort like ('"."_____".date("m")."%')";
                 $resultat = get_stat_vie($now); 
                              ?>
 
@@ -488,7 +488,7 @@ $getbutton = get_resultat_button($resultat);
 
 
              <?php 
-                $now = "where date_mort like ('".date("Y")."%')";
+                $now = "and date_mort like ('".date("Y")."%')";
                 $resultat = get_stat_vie($now); 
                              ?>
 
@@ -537,7 +537,7 @@ $getbutton = get_resultat_button($resultat);
 
 
              <?php 
-                $now = "Where mort = 'Oui'";
+                $now = "and mort = 'Oui'";
                 $resultat = get_stat_vie($now); 
                              ?>
 
