@@ -306,7 +306,7 @@ $alltoday = get_nbr_test($now);
 
 
              <?php 
-                $now = "_____".date("m")."%";
+                $now = "";
                 $resultat = get_stat_genre($now); 
                              ?>
 
@@ -339,7 +339,53 @@ $alltoday = get_nbr_test($now);
         </div>
 
 
+<div class="col-md-6">
+          <!-- jQuery Knob -->
+          <div class="box box-solid">
+           
 
+ <div class="box-header with-border">
+              <h3 class="box-title">Statistiques Par Vie</h3>
+
+              <div class="box-tools pull-right">
+                            </div>
+              <!-- /.box-tools -->
+            </div>
+
+
+
+             <?php 
+                $now = "";
+                $resultat = get_stat_vie($now); 
+                             ?>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+               
+            <!-- ./col -->
+            <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["MortP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="red" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: red; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Morts(<?php echo $resultat["Mort"]; ?>)</div>
+                </div>
+                <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["VieP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="green" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: green; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Vivants(<?php echo $resultat["Vie"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+               
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+
+            
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
 
 
       </div>

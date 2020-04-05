@@ -81,7 +81,186 @@ function get_stat_now($cond) {
  $resultat["TresGraveP"] = 0;
   $resultat["Total"] = 0;
  //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
-  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date like ('$cond')"); 
+  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date like ('$cond') and mort = ''"); 
+while ($data2 = $tout->fetch()) {
+  $tab = array();
+
+  $form_data = unserialize($data2["form_value"]);
+  foreach ($form_data as $key => $data){
+
+                            $matches = array();
+
+                            if ( $key == 'cfdb7_status' )  continue;
+                      
+                            if( ! empty($matches[0]) ) continue;
+
+                                     if ( is_array($data) ) {
+
+                                    $key_val = str_replace('your-', '', $key);
+                                    $key_val = ucfirst( $key_val );
+                                    $arr_str_data =  implode(', ',$data);
+                                  
+                                  //echo '<p><b>'.$key_val.'</b>: '. nl2br($arr_str_data) .'</p>';
+                  if (trim($key_val) == "Id:name")
+                           {
+                           
+                            $tab["name"] = $data;
+                        
+                           }
+                            if (trim($key_val) == "Id:tel")
+                         {
+                         
+                          $tab["tel"] = $data;
+                         
+
+                         }
+                             if (trim($key_val) == "Ville")
+                         {
+                         
+                          $tab["ville"] = $data;
+                          }
+                            if (trim($key_val) == "Naissance")
+                         {
+                          $tab["age"] = $data;
+                         }
+                             if (trim($key_val) == "Remperature")
+                         {
+                          $tab["tmp"] = $data;
+                        
+                         }
+
+                        if (trim($key_val) == "Respiratoire")
+                         {$tab["resp"] = $data;}
+                       if (trim($key_val) == "Voyage")
+                         {$tab["voi"] = $data;}
+                       if (trim($key_val) == "Contactcorona")
+                         {$tab["cm"] = $data;}
+                      if (trim($key_val) == "Dairrhe")
+                         {$tab["drh"] = $data;}
+                     if (trim($key_val) == "Genre")
+                         {$tab["genre"] = $data[0];}
+                        if (trim($key_val) == "Tete")
+                         {$tab["tete"] = $data;}
+                          if (trim($key_val) == "Gorge")
+                         {$tab["gorge"] = $data;}
+                      if (trim($key_val) == "Fatigue")
+                         {$tab["fatigue"] = $data;}
+                      if (trim($key_val) == "Toux")
+                         {$tab["toux"] = $data;}
+                       if (trim($key_val) == "Courbature")
+                         {$tab["corbature"] = $data;}
+                      if (trim($key_val) == "Contact")
+                         {$tab["epidemie"] = $data;}
+                     
+                                }else{
+
+                                    $key_val = str_replace('your-', '', $key);
+                                    $key_val = ucfirst( $key_val );
+                              
+                                    //echo '<p><b>'.$key_val.'</b>: '.nl2br($data).'</p>';
+                                      if (trim($key_val) == "Id:name")
+                           {
+                           
+                            $tab["name"] = $data;
+                          
+                           }
+                            if (trim($key_val) == "Id:tel")
+                         {
+                         
+                          $tab["tel"] = $data;
+                         
+
+                         }
+                             if (trim($key_val) == "Ville")
+                         {
+                         
+                          $tab["ville"] = $data;
+                         
+
+
+                         }
+                             if (trim($key_val) == "Naissance")
+                         {
+                         
+                          $tab["age"] = $data;
+                         
+
+                         }
+                              if (trim($key_val) == "Remperature")
+                         {$tab["tmp"] = $data;}
+                        if (trim($key_val) == "Respiratoire")
+                         {$tab["resp"] = $data;}
+                       if (trim($key_val) == "Voyage")
+                         {$tab["voi"] = $data;}
+                       if (trim($key_val) == "Contactcorona")
+                         {$tab["cm"] = $data;}
+                        if (trim($key_val) == "Genre")
+                         {$tab["genre"] = $data[0];}
+                     if (trim($key_val) == "Dairrhe")
+                         {$tab["drh"] = $data;}
+                      if (trim($key_val) == "Tete")
+                         {$tab["tete"] = $data;}
+
+                      if (trim($key_val) == "Gorge")
+                         {$tab["gorge"] = $data;}
+
+                      if (trim($key_val) == "Toux")
+                         {$tab["toux"] = $data;}
+                      if (trim($key_val) == "Fatigue")
+                         {$tab["fatigue"] = $data;}
+                     if (trim($key_val) == "Courbature")
+                         {$tab["corbature"] = $data;}
+                      if (trim($key_val) == "Contact")
+                         {$tab["epidemie"] = $data;}
+                                }
+                         
+                     //  - - - - - - 
+
+                       }
+
+ $score = get_score($tab["tmp"][0],$tab["resp"][0],$tab["voi"][0],$tab["cm"][0],$tab["drh"][0],$tab["tete"][0],$tab["gorge"][0],$tab["toux"][0],$tab["fatigue"][0],$tab["corbature"][0],$tab["epidemie"][0]);
+$score_res = get_resultat($score);
+if ($score_res == "Non")
+{
+  $resultat["Non"]++;
+}
+if ($score_res == "Normale")
+{
+  $resultat["Normale"]++;
+}
+if ($score_res == "Grave")
+{
+  $resultat["Grave"]++;
+}
+if ($score_res == "TresGrave")
+{
+  $resultat["TresGrave"]++;
+}
+
+}
+$resultat["Total"] = $resultat["Normale"]+$resultat["Grave"]+$resultat["Non"]+$resultat["TresGrave"];
+$resultat["NonP"] = ($resultat["Non"] / $resultat["Total"]) * 100;
+$resultat["GraveP"] = ($resultat["Grave"] / $resultat["Total"]) * 100;
+$resultat["NormaleP"] = ($resultat["Normale"] / $resultat["Total"]) * 100;
+$resultat["TresGraveP"] = ($resultat["TresGrave"] / $resultat["Total"]) * 100;
+return $resultat;
+  
+  }
+
+function get_stat_now_mort($cond) {
+  include "db.php";
+ $resultat = array();
+ $resultat["Non"] = 0;
+ $resultat["Normale"] = 0;
+ $resultat["Grave"] = 0;
+ $resultat["TresGrave"] = 0;
+  $resultat["NonP"] = 0;
+ $resultat["NormaleP"] = 0;
+ $resultat["GraveP"] = 0;
+ $resultat["TresGraveP"] = 0;
+  $resultat["Total"] = 0;
+ //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
+  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date and mort = 'Oui'"); 
 while ($data2 = $tout->fetch()) {
   $tab = array();
 
@@ -370,7 +549,38 @@ return $resultat;
 
 
 
-   function get_stat_genre_mort($cond) {
+   function get_stat_vie($cond) {
+  include "db.php";
+ $resultat = array();
+ $resultat["Mort"] = 0;
+ $resultat["MortP"] = 0;
+ $resultat["Vie"] = 0;
+ $resultat["VieP"] = 0;
+  $resultat["Total"] = 0;
+ //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
+  $tout = $db->query("SELECT * FROM wp_db7_forms $cond"); 
+while ($data2 = $tout->fetch()) {
+ if ($data2["mort"] == "Oui")
+ {
+  $resultat["Mort"]++;
+ }
+ else
+ {
+  $resultat["Vie"]++;
+ }
+
+}
+$resultat["Total"] = $resultat["Mort"]+$resultat["Vie"];
+$resultat["MortP"] = ($resultat["Mort"] / $resultat["Total"]) * 100;
+$resultat["VieP"] = ($resultat["Vie"] / $resultat["Total"]) * 100;
+return $resultat;
+  
+  }
+
+
+
+
+     function get_stat_genre_mort($cond) {
   include "db.php";
  $resultat = array();
  $resultat["Masculain"] = 0;

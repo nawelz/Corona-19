@@ -1,7 +1,7 @@
 <div class="col-md-12">
           <div class="box box-success box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Liste des Testes</h3>
+              <h3 class="box-title">Liste des Morts</h3>
 
               <div class="box-tools pull-right">
                             </div>
@@ -40,7 +40,7 @@
                  </thead>
           <tbody>
 <?php
-$tout = $db->query("SELECT * FROM wp_db7_forms where mort = ''"); 
+$tout = $db->query("SELECT * FROM wp_db7_forms where mort = 'Oui'"); 
 while ($data2 = $tout->fetch()) {
 	$tab = array();
 	$i = 0;
@@ -258,7 +258,7 @@ $getbutton = get_resultat_button($resultat);
         </div>
 
 
-<br>
+
 
 
  <div class="row">
@@ -280,7 +280,7 @@ $getbutton = get_resultat_button($resultat);
 
              <?php 
                 $now = "";
-                $resultat = get_stat_genre($now); 
+                $resultat = get_stat_genre_mort($now); 
                              ?>
 
             <!-- /.box-header -->
@@ -320,8 +320,8 @@ $getbutton = get_resultat_button($resultat);
 
               <div class="box-tools pull-right">
                 <?php 
-                $now = "%";
-                $resultat = get_stat_now($now); 
+                $now = "";
+                $resultat = get_stat_now_mort($now); 
               
                 ?>
               </div>
@@ -364,6 +364,210 @@ $getbutton = get_resultat_button($resultat);
           <!-- /.box -->
         </div>
 
+
+
+
+<div class="col-md-6">
+          <!-- jQuery Knob -->
+          <div class="box box-solid">
+           
+
+ <div class="box-header with-border">
+              <h3 class="box-title">Statistiques Par Morts Aujourd'hui</h3>
+
+              <div class="box-tools pull-right">
+                            </div>
+              <!-- /.box-tools -->
+            </div>
+
+
+
+             <?php 
+                $now = "Where date_mort like ('".date("Y")."-".date("m")."-".date("d")."%"."')";
+                $resultat = get_stat_vie($now); 
+                             ?>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+               
+            <!-- ./col -->
+            <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["MortP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="red" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: red; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Morts(<?php echo $resultat["Mort"]; ?>)</div>
+                </div>
+                <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["VieP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="green" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: green; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Vivants(<?php echo $resultat["Vie"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+               
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+
+            
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+
+
+
+
+
+<div class="col-md-6">
+          <!-- jQuery Knob -->
+          <div class="box box-solid">
+           
+
+ <div class="box-header with-border">
+              <h3 class="box-title">Statistiques Par Vie ce Mois</h3>
+
+              <div class="box-tools pull-right">
+                            </div>
+              <!-- /.box-tools -->
+            </div>
+
+
+
+             <?php 
+                 $now = "Where date_mort like ('"."_____".date("m")."%')";
+                $resultat = get_stat_vie($now); 
+                             ?>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+               
+            <!-- ./col -->
+            <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["MortP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="red" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: red; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Morts(<?php echo $resultat["Mort"]; ?>)</div>
+                </div>
+                <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["VieP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="green" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: green; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Vivants(<?php echo $resultat["Vie"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+               
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+
+            
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+
+
+
+
+<div class="col-md-6">
+          <!-- jQuery Knob -->
+          <div class="box box-solid">
+           
+
+ <div class="box-header with-border">
+              <h3 class="box-title">Statistiques Cet Année</h3>
+
+              <div class="box-tools pull-right">
+                            </div>
+              <!-- /.box-tools -->
+            </div>
+
+
+
+             <?php 
+                $now = "where date_mort like ('".date("Y")."%')";
+                $resultat = get_stat_vie($now); 
+                             ?>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+               
+            <!-- ./col -->
+            <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["MortP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="red" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: red; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Morts(<?php echo $resultat["Mort"]; ?>)</div>
+                </div>
+                <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["VieP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="green" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: green; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Vivants(<?php echo $resultat["Vie"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+               
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+
+            
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+
+<div class="col-md-6">
+          <!-- jQuery Knob -->
+          <div class="box box-solid">
+           
+
+ <div class="box-header with-border">
+              <h3 class="box-title">Statistiques Par Vie Tous</h3>
+
+              <div class="box-tools pull-right">
+                            </div>
+              <!-- /.box-tools -->
+            </div>
+
+
+
+             <?php 
+                $now = "Where mort = 'Oui'";
+                $resultat = get_stat_vie($now); 
+                             ?>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+               
+            <!-- ./col -->
+            <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["MortP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="red" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: red; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Morts(<?php echo $resultat["Mort"]; ?>)</div>
+                </div>
+                <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["VieP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="green" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: green; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Vivants(<?php echo $resultat["Vie"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+               
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+
+            
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
 
         </div>
 
