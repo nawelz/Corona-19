@@ -40,7 +40,7 @@
                  </thead>
           <tbody>
 <?php
-$tout = $db->query("SELECT * FROM wp_db7_forms"); 
+$tout = $db->query("SELECT * FROM wp_db7_forms where form_post_id = '6'"); 
 while ($data2 = $tout->fetch()) {
 	$tab = array();
 	$i = 0;

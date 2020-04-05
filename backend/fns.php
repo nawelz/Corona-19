@@ -81,7 +81,7 @@ function get_stat_now($cond) {
  $resultat["TresGraveP"] = 0;
   $resultat["Total"] = 0;
  //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
-  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date like ('$cond') and mort = ''"); 
+  $tout = $db->query("SELECT * FROM wp_db7_forms where form_date like ('$cond') and mort = '' and form_post_id = '6'"); 
 while ($data2 = $tout->fetch()) {
   $tab = array();
 
