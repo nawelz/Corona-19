@@ -40,7 +40,7 @@
                  </thead>
           <tbody>
 <?php
-$tout = $db->query("SELECT * FROM wp_db7_forms"); 
+$tout = $db->query("SELECT * FROM wp_db7_forms where mort = ''"); 
 while ($data2 = $tout->fetch()) {
 	$tab = array();
 	$i = 0;
@@ -251,10 +251,121 @@ $getbutton = get_resultat_button($resultat);
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
+
+
+
+
         </div>
 
 
+<br>
 
+
+ <div class="row">
+    
+ <div class="col-md-6">
+          <!-- jQuery Knob -->
+          <div class="box box-solid">
+           
+
+ <div class="box-header with-border">
+              <h3 class="box-title">Statistiques Par Genres</h3>
+
+              <div class="box-tools pull-right">
+                            </div>
+              <!-- /.box-tools -->
+            </div>
+
+
+
+             <?php 
+                $now = "_____".date("m")."%";
+                $resultat = get_stat_genre($now); 
+                             ?>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+               
+            <!-- ./col -->
+            <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["MasculainP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="#00a65a" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Masculains(<?php echo $resultat["Masculain"]; ?>)</div>
+                </div>
+                <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["FemininP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="#00a65a" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Féminin(<?php echo $resultat["Feminin"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+               
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+
+            
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+ <div class="col-md-6">
+          <!-- jQuery Knob -->
+          <div class="box box-solid">
+            <div class="box-header">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">Tous Les Testes</h3>
+
+              <div class="box-tools pull-right">
+                <?php 
+                $now = "%";
+                $resultat = get_stat_now($now); 
+              
+                ?>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+               
+            <!-- ./col -->
+            <div class="col-md-3 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["NonP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="#00a65a" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Cas Normales(<?php echo $resultat["Non"]; ?>)</div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["NormaleP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="#00a65a" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Cas a Suivre(<?php echo $resultat["Normale"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-md-3 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["GraveP"]; ?>" data-width="90" data-height="90" data-fgcolor="orange" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: orange; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Cas Graves (<?php echo $resultat["Grave"]; ?>)</div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["TresGraveP"]; ?>" data-width="90" data-height="90" data-fgcolor="red" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: red; padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Cas Trés Graves(<?php echo $resultat["TresGrave"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+
+            
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+
+        </div>
 
 
 

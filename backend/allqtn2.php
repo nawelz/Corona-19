@@ -40,7 +40,7 @@
                  </thead>
           <tbody>
 <?php
-$tout = $db->query("SELECT * FROM wp_db7_forms where quarantaine = 'Oui'"); 
+$tout = $db->query("SELECT * FROM wp_db7_forms where quarantaine = 'Oui' and mort = ''"); 
 while ($data2 = $tout->fetch()) {
 	$tab = array();
 	$i = 0;
@@ -263,4 +263,52 @@ $getbutton = get_resultat_button($resultat);
  
 
 
-	
+	<div class="row">    
+ <div class="col-md-6">
+          <!-- jQuery Knob -->
+          <div class="box box-solid">
+           
+
+ <div class="box-header with-border">
+              <h3 class="box-title">Statistiques Par Genres</h3>
+
+              <div class="box-tools pull-right">
+                            </div>
+              <!-- /.box-tools -->
+            </div>
+
+
+
+             <?php 
+                $now = "and quarantaine = 'Oui'";
+                $resultat = get_stat_genre($now); 
+                             ?>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+               
+            <!-- ./col -->
+            <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["MasculainP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="#00a65a" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Masculains(<?php echo $resultat["Masculain"]; ?>)</div>
+                </div>
+                <div class="col-md-6 text-center">
+                  <div style="display:inline;width:90px;height:90px;"><input type="text" class="knob" value="<?php echo $resultat["FemininP"]; ?>" data-min="0" data-max="100" data-width="90" data-height="90" data-fgcolor="#00a65a" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px; -moz-appearance: none;"></div>
+
+                  <div class="knob-label">Féminin(<?php echo $resultat["Feminin"]; ?>)</div>
+                </div>
+                <!-- ./col -->
+               
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+
+            
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        </div>

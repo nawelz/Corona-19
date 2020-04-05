@@ -46,19 +46,20 @@
           </a>
         </li>
 
-	
-		
-		 <li class="treeview">
-		
-          <a href="#">
-            <i class="fa fa-table"></i> <span>Statistiques</span>
+	  <li>
+          <a href="allmorts.php">
+            <i class="fa fa-dashboard"></i> <span>Tous les morts</span>
             <span class="pull-right-container">
-			
-              <i class="fa fa-angle-left pull-right"></i>
-			 
             </span>
           </a>
-        
+        </li>
+		
+		   <li>
+          <a href="hspitalisation.php">
+            <i class="fa fa-dashboard"></i> <span>Hospitalisation</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
         </li>
         
 

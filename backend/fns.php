@@ -285,4 +285,85 @@ $req = "Update wp_db7_forms SET mort = 'Oui' , date_mort = '$thisd' where form_i
 echo $req;
   $tout = $db->query($req); 
   }
+
+
+
+
+
+  function get_stat_genre($cond) {
+  include "db.php";
+ $resultat = array();
+ $resultat["Masculain"] = 0;
+ $resultat["MasculainP"] = 0;
+ $resultat["Feminin"] = 0;
+ $resultat["FemininP"] = 0;
+  $resultat["Total"] = 0;
+ //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
+  $tout = $db->query("SELECT * FROM wp_db7_forms where mort = '' $cond"); 
+while ($data2 = $tout->fetch()) {
+  $tab = array();
+
+  $form_data = unserialize($data2["form_value"]);
+  foreach ($form_data as $key => $data){
+
+                            $matches = array();
+
+                            if ( $key == 'cfdb7_status' )  continue;
+                      
+                            if( ! empty($matches[0]) ) continue;
+
+                                     if ( is_array($data) ) {
+
+                                    $key_val = str_replace('your-', '', $key);
+                                    $key_val = ucfirst( $key_val );
+                                    $arr_str_data =  implode(', ',$data);
+                                  
+             
+                      if (trim($key_val) == "Genre")
+                         
+                             if ($data[0] == "Masculain")
+                        {
+                          $resultat["Masculain"]++;
+                        }
+                        else
+                        {
+                          $resultat["Feminin"]++;
+                        }
+                    
+                     
+                                }else{
+
+                                    $key_val = str_replace('your-', '', $key);
+                                    $key_val = ucfirst( $key_val );
+                              
+                                    //echo '<p><b>'.$key_val.'</b>: '.nl2br($data).'</p>';
+                     
+                        if (trim($key_val) == "Genre")
+                         
+                             if ($data[0] == "Masculain")
+                        {
+                          $resultat["Masculain"]++;
+                        }
+                        else
+                        {
+                          $resultat["Feminin"]++;
+                        }
+
+                     
+                    
+                         
+                     //  - - - - - - 
+
+                       }
+
+                   
+}
+
+}
+$resultat["Total"] = $resultat["Masculain"]+$resultat["Feminin"];
+$resultat["MasculainP"] = ($resultat["Masculain"] / $resultat["Total"]) * 100;
+$resultat["FemininP"] = ($resultat["Feminin"] / $resultat["Total"]) * 100;
+return $resultat;
+  
+  }
 ?>
