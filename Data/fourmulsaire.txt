@@ -1,0 +1,65 @@
+<h1><label> Covid-19 Questionnaire </label></h1>
+
+<label> Votre Nom et Prénom (required)
+    [text* id:name your-name] </label>
+
+<label>Téléphone [text* id:tel your-name]</label>
+
+<label> Email (required)
+    [email* id:email your-email] </label>
+
+<label style="color:#BB0B0B"> Question 1 sur 11  </label>
+<label>Ces derniers jours, avez-vous eu ou ressenti un de ces symptômes ?</label>
+Vous avez de la fièvre (Température>37°8)?          [radio remperature id:q11 "Oui" "Non"]
+Vous avez une difficulté respiratoire?  [radio respiratoire id:q12 "Oui" "Non"]
+Vous avez une diarrhée (au moins 3 selles molles/j)?[radio dairrhe id:q13 "Oui" "Non"]
+Vous avez des céphalées (maux de tête)?             [radio tete id:q14 "Oui" "Non"]
+Vous avez mal au gorge?             [radio gorge id:q14 "Oui" "Non"]
+Vous avez de une Toux ou une augmentation de votre toux habituelle?             [radio toux id:q14 "Oui" "Non"]
+Vous avez de une Fatigue inhabituelle?             [radio fatigue id:q14 "Oui" "Non"]
+<label style="color:#BB0B0B">Question 2 sur 11</label>
+<label>Est-ce que vous avez été en voyage à l'étranger ces deux dernières semaines ?</label>
+[radio voyage id:q2 label_first "Oui" "Non"]
+
+<label style="color:#BB0B0B">Question 3 sur 11</label>
+<label>Est-ce que vous avez été en voyage au pays touché par l'épidémie?</label>
+[radio contact id:q3 label_first "Oui" "Non"]
+
+<label style="color:#BB0B0B">Question 4 sur 11</label>
+<label>Est-ce que vous avez été en contact, pendant les deux dernières semaines, avec une personne atteinte du Coronavirus ?</label>
+[radio contactcorona id:q4 label_first "Oui" "Non"]
+
+<label style="color:#BB0B0B">Question 5 sur 11</label>
+<label>Quelle est votre année de naissance ?</label>
+[date naissance id:q5 placeholder]
+
+<label style="color:#BB0B0B">Question 6 sur 11</label>
+<label>Quel est votre genre ?</label>
+[radio genre id:q6 label_first "Masculin" "Féminin"]
+
+<label style="color:#BB0B0B">Question 7 sur 11</label>
+<label>Quel est votre poids (en kg)?  [text* id:poids Ton_poids]</label>
+
+
+<label style="color:#BB0B0B">Question 8 sur 11</label>
+<label>Quelle est votre taille (en cm)? [text* id:taille taille]</label>
+
+<label style="color:#BB0B0B">Question 9 sur 11</label>
+<label>Dans quel gouvernorat habitez-vous ?</label>
+[select ville id:q9 "Ariana" "Béja" "Ben Arous" "Bizerte" "Gabes" "Gafsa" "Jendouba" "Kairouan" "Kasserine" "Kebili" "La Manouba" "Le Kef" "Mahdia" "Médenine" "Monastir" "Nabeul" "Sfax" "Sidi Bouzid" "Siliana" "Sousse" "Tataouine" "Tozeur" "Tunis" "Zaghouan"]
+
+<label style="color:#BB0B0B">Question 10 sur 11</label>
+<label>"Etes vous enceinte ?</label>
+[radio enceinte id:q10 label_first "Oui" "Non"]
+
+<label style="color:#BB0B0B"> Question 11 sur 11</label>
+<label>Avez-vous du  Corbature ?</label>
+[radio courbature id:q10 label_first "Oui" "Non"]
+
+
+
+
+<label> Suggestion
+    [textarea id:sugg your-message] </label>
+
+[submit "Send"]
