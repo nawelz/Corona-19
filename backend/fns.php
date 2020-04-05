@@ -579,6 +579,33 @@ return $resultat;
 
 
 
+   function get_stat_qtn($cond) {
+  include "db.php";
+ $resultat = array();
+ $resultat["QTN"] = 0;
+ $resultat["NON"] = 0;
+ $resultat["QTNP"] = 0;
+ $resultat["NONP"] = 0;
+  $resultat["Total"] = 0;
+ //echo "SELECT * FROM wp_db7_forms while 'form_date' like ('$cond')";
+  $tout = $db->query("SELECT * FROM wp_db7_forms where mort = '' and quarantaine = 'Oui' $cond"); 
+while ($data2 = $tout->fetch()) {
+ if (diff_day($data2["date_quarantaine"]) > 15)
+ {
+  $resultat["NON"]++;
+ }
+ else
+ {
+  $resultat["QTN"]++;
+ }
+
+}
+$resultat["Total"] = $resultat["QTN"]+$resultat["NON"];
+$resultat["QTNP"] = ($resultat["QTN"] / $resultat["Total"]) * 100;
+$resultat["NONP"] = ($resultat["NON"] / $resultat["Total"]) * 100;
+return $resultat;
+  
+  }
 
      function get_stat_genre_mort($cond) {
   include "db.php";
